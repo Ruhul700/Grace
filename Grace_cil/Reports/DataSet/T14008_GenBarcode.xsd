@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="T14008_GenBarcode" targetNamespace="http://tempuri.org/T14008_GenBarcode.xsd" xmlns:mstns="http://tempuri.org/T14008_GenBarcode.xsd" xmlns="http://tempuri.org/T14008_GenBarcode.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="T14008_GenBarcode" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="T14008_GenBarcode" msprop:Generator_UserDSName="T14008_GenBarcode">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T14008_GenBarcode" msprop:Generator_TableClassName="T14008_GenBarcodeDataTable" msprop:Generator_TableVarName="tableT14008_GenBarcode" msprop:Generator_TablePropName="_T14008_GenBarcode" msprop:Generator_RowDeletingName="T14008_GenBarcodeRowDeleting" msprop:Generator_RowChangingName="T14008_GenBarcodeRowChanging" msprop:Generator_RowEvHandlerName="T14008_GenBarcodeRowChangeEventHandler" msprop:Generator_RowDeletedName="T14008_GenBarcodeRowDeleted" msprop:Generator_UserTableName="T14008_GenBarcode" msprop:Generator_RowChangedName="T14008_GenBarcodeRowChanged" msprop:Generator_RowEvArgName="T14008_GenBarcodeRowChangeEvent" msprop:Generator_RowClassName="T14008_GenBarcodeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="T_BARCODE" msprop:Generator_ColumnVarNameInTable="columnT_BARCODE" msprop:Generator_ColumnPropNameInRow="T_BARCODE" msprop:Generator_ColumnPropNameInTable="T_BARCODEColumn" msprop:Generator_UserColumnName="T_BARCODE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PRO_CODE" msprop:Generator_ColumnVarNameInTable="columnT_PRO_CODE" msprop:Generator_ColumnPropNameInRow="T_PRO_CODE" msprop:Generator_ColumnPropNameInTable="T_PRO_CODEColumn" msprop:Generator_UserColumnName="T_PRO_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_SALE_PRICE" msprop:Generator_ColumnVarNameInTable="columnT_SALE_PRICE" msprop:Generator_ColumnPropNameInRow="T_SALE_PRICE" msprop:Generator_ColumnPropNameInTable="T_SALE_PRICEColumn" msprop:Generator_UserColumnName="T_SALE_PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnT_PRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="T_PRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="T_PRODUCT_NAMEColumn" msprop:Generator_UserColumnName="T_PRODUCT_NAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

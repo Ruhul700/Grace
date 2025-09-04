@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "T18020";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Apps/Inventory/Transaction/T18020Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<div class="" ng-app="Glorious" ng-controller="T18020Controller">
+    @*header*@
+    <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Client Commonication</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+            @*  <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>*@
+        </div>
+    </div>
+    @*===========*@
+    <div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+        <table class="inputTable center" style=" width: 90%;">
+            <tr>
+                <td style=" width: 10%;">
+                    <label id="lblMobile" class="textlevel">Mobile</label>
+                </td>
+                <td style="width: 20%; text-align: left; ">
+                    <input id="txtMobile" type="text" ng-model="obj.T18020.T_CHAT_CLIENT_MOBILE" ng-change="MobileChange()" class="form-control" />
+                </td>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Name</label>
+                </td>
+                <td style="width: 20%; text-align: left; ">
+                    <input type="text" ng-model="obj.T18020.T_CHAT_CLIENT_NAME" class="form-control" />
+                </td>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Address</label>
+                </td>
+                <td style="width: 20%; text-align: left; ">
+                    <input type="text" ng-model="obj.T18020.T_CHAT_CLIENT_ADDRESS" class="form-control" />
+                </td>
+            </tr>
+
+        </table>
+        <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+        <table class="inputTable center" style=" width: 90%;">
+            <tr>
+                <td style=" width: 10%;"></td>
+                <td style=" width: 20%; font-size: 15px;">{{obj.T_ENTRY_USER}}</td>
+                <td style=" width: 70%;"></td>
+            </tr>
+            <tr>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Last Chat</label>
+                </td>
+                <td colspan="5" style="width: 90%; text-align: left; ">
+                    <textarea rows="5" style="min-width: 100%;max-width:100%" ng-model="obj.T18020.LAST_CHAT" class="form-control" readonly></textarea>
+                </td>
+            </tr>
+        </table>
+        <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+        <table class="inputTable center" style=" width: 90%;">
+            <tr>
+                <td style=" width: 10%;">
+                    <label id="lblChat" class="textlevel">Chat</label>
+                </td>
+                <td style="width: 90%; text-align: left; ">
+                    <textarea id="txtChat" rows="5" style="min-width: 100%;max-width:100%" ng-model="obj.T18020.T_CHAT_TEXT" class="form-control"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+

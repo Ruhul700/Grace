@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "T14022";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Apps/Inventory/Transaction/T14022Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<div class="" ng-app="Glorious" ng-controller="T14022Controller">
+    @*header*@
+    <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Purchase Verify</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            @*<a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+                <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>*@
+        </div>
+    </div>
+    @*===========*@
+    <div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">        
+        <table class="inputTable center" style=" width: 90%;">
+            <tr>
+                <td style=" width: 20%;">
+                    <label class="textlevel" style="text-align:left">Total Purchase Verify: <span style="margin-left:15px">{{obj.TotalPurchaseVerify}}</span></label>
+                </td>
+                <td style=" width: 20%;">
+                    <label class="textlevel">Invoice No</label>
+                </td>
+                <td style=" width: 20%;margin-right:0;"><input class="form-control" id="myInput" type="text" placeholder="Search.."> </td>
+            </tr>
+        </table>
+
+        <table id="tblGrid" class="tTable center" style=" width: 100%;">
+            <thead>
+                <tr style="color: black;text-align: center;background: #afadad" class="summary-table-header">
+                    <th style="width: 10%;font-size: 18px;">Invoice No</th>
+                    <th style="width: 15%;font-size: 18px;">Company Name</th>
+                    <th style="width: 10%;font-size: 18px;">User</th>
+                    <th style="width: 10%;font-size: 18px;">Quantiy</th>
+                    <th style="width: 10%;font-size: 18px;">G.Total</th>
+                    <th style="width: 5%;font-size: 18px;">Discount</th>
+                    <th style="width: 10%;font-size: 18px;">Total Pri</th>
+                    <th style="width: 10%;font-size: 18px;">Payment</th>
+                    <th style="width: 5%;font-size: 18px;">Due</th>
+                    <th style="width: 10%;font-size: 18px;">Date</th>
+                    <th style="width: 5%;font-size: 18px;">Verify</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr ng-repeat="Z in obj.PurchaseVerifyList">
+                    <td style="width: 10%">{{Z.T_INVOICE_NO}}</td>
+                    <td style="width: 15%">{{Z.T_CUSTOMER_NAME}}</td>
+                    <td style="width: 10%">{{Z.T_EMP_NAME}}</td>
+                    <td style="width: 10%">{{Z.T_TOTAL_QUT}}</td>
+                    <td style="width: 10%">{{Z.T_TOTAL_PRICE}}</td>
+                    <td style="width: 5%">{{Z.T_DISCOUNT}}</td>
+                    <td style="width: 10%">{{Z.T_AFTER_DISCOUNT}}</td>
+                    <td style="width: 10%">{{Z.T_CASH}}</td>
+                    <td style="width: 5%">{{Z.T_DUE}}</td>
+                    <td style="width: 10%">{{Z.T_ENTRY_DATE}}</td>
+                    <td style="width: 5%">
+                        <input type="checkbox" ng-model="Z.T_VERIFY_FLG" ng-true-value="'1'" ng-false-value="'0'" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+

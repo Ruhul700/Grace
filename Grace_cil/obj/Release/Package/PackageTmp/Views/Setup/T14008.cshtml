@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "T14008";
+}
+
+<script src="~/Apps/Inventory/Setup/T14008Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<div class="" ng-app="Petgallery" ng-controller="T14008Controller">
+    @*header*@
+    <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Barcode List</span>
+        <div class="header-right">
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+        </div>
+    </div>
+    @*===========*@
+    <div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+        <table class="inputTable center" style=" width: 90%;">
+            <tr>
+                <td style=" width: 20%;">
+                    <label class="textlevel" style="text-align:left">Total : <span style="margin-left:15px">{{obj.Total}}</span></label>
+                </td>
+                <td style="width: 80%; text-align: -webkit-right;">
+                    <input id="txtsearch" type="text" style="width:200px" ng-model="obj.Search" ng-change="search()" placeholder="Search....." class="form-control" />
+                </td>
+            </tr>
+        </table>
+
+        <table id="tblGrid" class="tTable center" style=" width: 90%;">
+            <thead>
+                <tr style="color: black;text-align: center;background: #afadad" class="summary-table-header">
+                    <th style="width: 5%;font-size: 18px;">Code</th>
+                    <th style="width: 10%;text-align: center;font-size: 18px;">Catagory</th>
+                    <th style="width: 20%;font-size: 18px;">Product Name</th>
+                    <th style="width: 10%;font-size: 18px;">Weight</th>
+                    <th style="width: 10%;font-size: 18px;">Pack Name</th>
+                    <th style="width: 5%;font-size: 18px;">UM</th>
+                    <th style="width: 10%;font-size: 18px;">Price</th>
+                    <th style="width: 10%;font-size: 18px;">Hole S.Price</th>
+                    <th style="width: 10%;font-size: 18px;">Retail S.Price</th>
+                    <th style="width: 5%;font-size: 18px;">Image</th>
+                    <th style="width: 10%;font-size: 18px;">BrNu</th>
+                    <th style="width: 5%;font-size: 18px;">Check</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Z in obj.ProductList" >
+                    <td style="width: 5%">{{Z.T_PRODUCT_CODE}}</td>
+                    <td style="width: 10%">{{Z.T_TYPE_NAME}}</td>
+                    <td style="width: 20%">{{Z.T_PRODUCT_NAME}} </td>
+                    <td style="width: 10%">{{Z.T_PACK_WEIGHT}} </td>
+                    <td style="width: 10%">{{Z.T_PACK_NAME}} </td>
+                    <td style="width: 5%">{{Z.T_UM}}</td>
+                    <td style="width: 10%">{{Z.T_PURCHASE_PRICE}}</td>
+                    <td style="width: 10%">{{Z.T_HOLE_SALE_PRICE}}</td>
+                    <td style="width: 10%">{{Z.T_RETAIL_SALE_PRICE}}</td>
+                    <td style="width: 5%">
+                        <img src="~/Images/{{Z.T_PRODUCT_IMAGE}}" style="width: 30px; height: 30px;" />
+                    </td>
+                    <td style="width: 10%">
+                        <input type="text" ng-model="Z.T_BARCODE_NUM"  class="form-control"  />
+                    </td>
+                    <td style="width: 5%">
+                        <input type="checkbox" ng-model="Z.T_CHECK_FLG" ng-true-value="'1'" ng-false-value="'0'" ng-click="CheckBox_Click($index,Z)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+
+</div>
+

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="T14050DesignSheet" targetNamespace="http://tempuri.org/T14050DesignSheet.xsd" xmlns:mstns="http://tempuri.org/T14050DesignSheet.xsd" xmlns="http://tempuri.org/T14050DesignSheet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="T14050DesignSheet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="T14050DesignSheet" msprop:Generator_UserDSName="T14050DesignSheet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T14050DesignSheet" msprop:Generator_TableClassName="T14050DesignSheetDataTable" msprop:Generator_TableVarName="tableT14050DesignSheet" msprop:Generator_TablePropName="_T14050DesignSheet" msprop:Generator_RowDeletingName="T14050DesignSheetRowDeleting" msprop:Generator_RowChangingName="T14050DesignSheetRowChanging" msprop:Generator_RowEvHandlerName="T14050DesignSheetRowChangeEventHandler" msprop:Generator_RowDeletedName="T14050DesignSheetRowDeleted" msprop:Generator_UserTableName="T14050DesignSheet" msprop:Generator_RowChangedName="T14050DesignSheetRowChanged" msprop:Generator_RowEvArgName="T14050DesignSheetRowChangeEvent" msprop:Generator_RowClassName="T14050DesignSheetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="T_DESIGN_CODE" msprop:Generator_ColumnVarNameInTable="columnT_DESIGN_CODE" msprop:Generator_ColumnPropNameInRow="T_DESIGN_CODE" msprop:Generator_ColumnPropNameInTable="T_DESIGN_CODEColumn" msprop:Generator_UserColumnName="T_DESIGN_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_DESIGN_NAME" msprop:Generator_ColumnVarNameInTable="columnT_DESIGN_NAME" msprop:Generator_ColumnPropNameInRow="T_DESIGN_NAME" msprop:Generator_ColumnPropNameInTable="T_DESIGN_NAMEColumn" msprop:Generator_UserColumnName="T_DESIGN_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_WIDTH" msprop:Generator_ColumnVarNameInTable="columnT_WIDTH" msprop:Generator_ColumnPropNameInRow="T_WIDTH" msprop:Generator_ColumnPropNameInTable="T_WIDTHColumn" msprop:Generator_UserColumnName="T_WIDTH" type="xs:string" minOccurs="0" />
+              <xs:element name="T_LENGHT" msprop:Generator_ColumnVarNameInTable="columnT_LENGHT" msprop:Generator_ColumnPropNameInRow="T_LENGHT" msprop:Generator_ColumnPropNameInTable="T_LENGHTColumn" msprop:Generator_UserColumnName="T_LENGHT" type="xs:string" minOccurs="0" />
+              <xs:element name="T_SANA" msprop:Generator_ColumnVarNameInTable="columnT_SANA" msprop:Generator_ColumnPropNameInRow="T_SANA" msprop:Generator_ColumnPropNameInTable="T_SANAColumn" msprop:Generator_UserColumnName="T_SANA" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PPI" msprop:Generator_ColumnVarNameInTable="columnT_PPI" msprop:Generator_ColumnPropNameInRow="T_PPI" msprop:Generator_ColumnPropNameInTable="T_PPIColumn" msprop:Generator_UserColumnName="T_PPI" type="xs:string" minOccurs="0" />
+              <xs:element name="QTY_50" msprop:Generator_ColumnVarNameInTable="columnQTY_50" msprop:Generator_ColumnPropNameInRow="QTY_50" msprop:Generator_ColumnPropNameInTable="QTY_50Column" msprop:Generator_UserColumnName="QTY_50" type="xs:string" minOccurs="0" />
+              <xs:element name="T_SUB_TOTAL" msprop:Generator_ColumnVarNameInTable="columnT_SUB_TOTAL" msprop:Generator_ColumnPropNameInRow="T_SUB_TOTAL" msprop:Generator_ColumnPropNameInTable="T_SUB_TOTALColumn" msprop:Generator_UserColumnName="T_SUB_TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="T_GRAND_TOTAL" msprop:Generator_ColumnVarNameInTable="columnT_GRAND_TOTAL" msprop:Generator_ColumnPropNameInRow="T_GRAND_TOTAL" msprop:Generator_ColumnPropNameInTable="T_GRAND_TOTALColumn" msprop:Generator_UserColumnName="T_GRAND_TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="T_ENTRY_DATE" msprop:Generator_ColumnVarNameInTable="columnT_ENTRY_DATE" msprop:Generator_ColumnPropNameInRow="T_ENTRY_DATE" msprop:Generator_ColumnPropNameInTable="T_ENTRY_DATEColumn" msprop:Generator_UserColumnName="T_ENTRY_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_DESIGN_TYPE_NAME" msprop:Generator_ColumnVarNameInTable="columnT_DESIGN_TYPE_NAME" msprop:Generator_ColumnPropNameInRow="T_DESIGN_TYPE_NAME" msprop:Generator_ColumnPropNameInTable="T_DESIGN_TYPE_NAMEColumn" msprop:Generator_UserColumnName="T_DESIGN_TYPE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_DESIGN_PRO_CODE" msprop:Generator_ColumnVarNameInTable="columnT_DESIGN_PRO_CODE" msprop:Generator_ColumnPropNameInRow="T_DESIGN_PRO_CODE" msprop:Generator_ColumnPropNameInTable="T_DESIGN_PRO_CODEColumn" msprop:Generator_UserColumnName="T_DESIGN_PRO_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_DESIGN_PRO_NAME" msprop:Generator_ColumnVarNameInTable="columnT_DESIGN_PRO_NAME" msprop:Generator_ColumnPropNameInRow="T_DESIGN_PRO_NAME" msprop:Generator_ColumnPropNameInTable="T_DESIGN_PRO_NAMEColumn" msprop:Generator_UserColumnName="T_DESIGN_PRO_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_QUANTITY" msprop:Generator_ColumnVarNameInTable="columnT_QUANTITY" msprop:Generator_ColumnPropNameInRow="T_QUANTITY" msprop:Generator_ColumnPropNameInTable="T_QUANTITYColumn" msprop:Generator_UserColumnName="T_QUANTITY" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PRICE" msprop:Generator_ColumnVarNameInTable="columnT_PRICE" msprop:Generator_ColumnPropNameInRow="T_PRICE" msprop:Generator_ColumnPropNameInTable="T_PRICEColumn" msprop:Generator_UserColumnName="T_PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_TOTAL" msprop:Generator_ColumnVarNameInTable="columnT_TOTAL" msprop:Generator_ColumnPropNameInRow="T_TOTAL" msprop:Generator_ColumnPropNameInTable="T_TOTALColumn" msprop:Generator_UserColumnName="T_TOTAL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

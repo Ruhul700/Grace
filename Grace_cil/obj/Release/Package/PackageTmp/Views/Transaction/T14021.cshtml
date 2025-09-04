@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "T14021";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Apps/Inventory/Transaction/T14021Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<div class="" ng-app="Glorious" ng-controller="T14021Controller">
+    @*header*@
+    <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Purchase Summary</span>
+        <div class="header-right">
+            @*<a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>*@
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+        @*   <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>*@
+        </div>
+    </div>
+    @*===========*@
+<div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+    <table class="inputTable center" style=" width: 90%;">
+        <tr>
+            <td style=" width: 10%;">
+                <label class="textlevel">From Date</label>
+            </td>
+            <td style="width: 20%; text-align: left; ">
+                <input type="date" ng-model="obj.T14021.FROM_DATE" ng-change="date_click()" class="form-control" />
+            </td>
+            <td style=" width: 10%;">
+                <label class="textlevel">To Date</label>
+            </td>
+            <td style="width: 20%; text-align: left; ">
+                <input type="date" ng-model="obj.T14021.TO_DATE" ng-change="date_click()" class="form-control" />
+            </td>
+            <td style=" width: 10%;"> </td>
+        </tr>
+    </table>
+    <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+    <table class="inputTable center" style=" width: 95%;">
+        <tr>
+            <td style=" width: 20%;">
+                <label class="textlevel" style="text-align:left">Total Purchase: <span style="margin-left:15px">{{obj.TotalSummery}}</span></label>
+            </td>
+            <td style="width: 80%; text-align: -webkit-right;">
+                <input id="txtsearch" type="text" style="width:200px" ng-model="obj.Search" ng-change="search()" placeholder="Search....." class="form-control" />
+            </td>
+        </tr>
+    </table>
+
+    <table id="tblGrid" class="tTable center" style=" width: 95%;">
+        <thead>
+            <tr style="color: black;text-align: center;background: #afadad" class="summary-table-header">
+                <th style="width: 3%;font-size: 18px;">SL</th>
+                <th style="width: 10%;text-align: center;font-size: 18px;">Inv No</th>
+                <th style="width: 12%;font-size: 18px;">Company Name</th>
+                <th style="width: 10%;font-size: 18px;">Pro Type</th>
+                <th style="width: 7%;font-size: 18px;">Qut</th>
+                <th style="width: 10%;font-size: 18px;">Price</th>
+                <th style="width: 10%;font-size: 18px;">Pament</th>
+                <th style="width: 8%;font-size: 18px;">Due</th>
+                <th style="width: 8%;font-size: 18px;">User</th>
+                <th style="width: 10%;font-size: 18px;">Date</th>
+                <th style="width: 7%;font-size: 18px;">Verify</th>
+                <th style="width: 5%;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Z in obj.PurchaseSummeryList">
+                <td style="width: 3%">{{Z.SL}}</td>
+                <td style="width: 10%">{{Z.T_INVOICE_NO}}</td>
+                <td style="width: 12%">{{Z.T_CUSTOMER_NAME}} </td>
+                <td style="width: 10%">{{Z.T_TYPE_NAME}} </td>
+                <td style="width: 7%">{{Z.T_TOTAL_QUT}} </td>
+                <td style="width: 10%">{{Z.T_TOTAL_PRICE}} </td>
+                <td style="width: 10%">{{Z.T_CASH}}</td>
+                <td style="width: 8%">{{Z.T_DUE}}</td>
+                <td style="width: 8%">{{Z.T_EMP_NAME}}</td>
+                <td style="width: 10%">{{Z.T_ENTRY_DATE}}</td>
+                <td style="width: 7%">{{Z.T_VERIFY_FLG}}</td>
+                <td style="width: 5%;">
+                    <input type="checkbox" ng-model="Z.T_PNT_VCHR_FLG" ng-true-value="'1'" ng-false-value="'0'" ng-click="Pnt_Vchr_Click($index,Z)"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
+

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63FEB91D-F2E7-46FE-A28D-DCA210EA2849}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Grace_DAL</RootNamespace>
+    <AssemblyName>Grace_DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.9.0.4\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Common\CommonDAL.cs" />
+    <Compile Include="Common\H00001DAL.cs" />
+    <Compile Include="Common\LoginDAL.cs" />
+    <Compile Include="Common\MenuDAL.cs" />
+    <Compile Include="Common\T10000DAL.cs" />
+    <Compile Include="DAL\Inventory\Report\R14041DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T11101DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T11102DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T11103DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14001DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14002DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14003DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14004DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14005DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14006DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14007DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14008DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14070DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14071DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T14072DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T11019DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T11020DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T11021DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T11022DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T11023DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14020DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14021DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14022DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14023DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14024DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14025DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14035DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14036DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14037DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14038DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14039DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14040DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14041DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14042DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14043DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14044DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14045DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14046DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14047DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14048DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14049DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14076DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T14077DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T18020DAL.cs" />
+    <Compile Include="DAL\Inventory\Transaction\T18021DAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\Inventory\Setup\T0000.cs" />
+    <Compile Include="Shared\Inventory\Setup\T11101.cs" />
+    <Compile Include="Shared\Inventory\Setup\T11102.cs" />
+    <Compile Include="Shared\Inventory\Setup\T11103.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14001.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14002.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14003.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14004.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14005.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14006.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14070.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14071.cs" />
+    <Compile Include="Shared\Inventory\Setup\T14072.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T11019.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T11020.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T11021.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T11022.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T11023.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14010.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14020.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14023.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14024.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14035.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14036.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14039.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14040.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14043.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14044.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14045.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14046.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14048.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14076.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T14077.cs" />
+    <Compile Include="Shared\Inventory\Transaction\T18020.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

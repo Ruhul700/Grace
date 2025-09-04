@@ -1,0 +1,9 @@
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Release\Grace_DAL.dll
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Release\Grace_DAL.pdb
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Release\System.Configuration.ConfigurationManager.dll
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Release\System.Configuration.ConfigurationManager.xml
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Release\Grace_DAL.csproj.AssemblyReference.cache
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Release\Grace_DAL.csproj.CoreCompileInputs.cache
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Release\Grace_DAL.csproj.CopyComplete
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Release\Grace_DAL.dll
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Release\Grace_DAL.pdb

@@ -1,0 +1,78 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Header.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/dirPagination.js"></script>
+<script src="~/Scripts/angular-sanitize.js"></script>
+<script src="~/Scripts/select.js"></script>
+<script src="~/Scripts/smsalert.js"></script>
+<script src="~/Scripts/Module/fileUploader.js"></script>
+<script src="~/Scripts/angular-base64-upload.js"></script>
+<script src="~/Apps/app.js"></script>
+<script src="~/Scripts/fileUploader.js"></script>
+<link href="~/Content/Custom.css" rel="stylesheet" />
+<link href="~/Content/modal.css" rel="stylesheet" />
+<script src="~/Apps/CommonController/H00001Controller.js"></script>
+<script src="~/Apps/CommonService/H00001Service.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>H00001</title>
+</head>
+<body ng-app="Grace">
+    <div class="container" ng-app="Grace" ng-controller="H00001Controller">
+        <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>       
+        <section class="main">
+            <div class="main-top">
+                <h1> Grace Consumer Ind Ltd</h1>
+            </div>
+            <div class="users">
+                <div class="card" ng-click="Inventory_Click('20')">
+                    <img src="~/Images/Purchase.png" />
+                    <h4>Purchase</h4>
+                </div>
+                <div class="card" ng-click="Inventory_Click('40')">
+                    <img src="~/Images/Sales.png">
+                    <h4>Sales</h4>
+                </div>
+                <div class="card" ng-click="Inventory_Click('35')">
+                    <img src="~/Images/inventory.png" />
+                    <h4>Stock</h4>
+                </div>
+                @*<div class="card" ng-click="Inventory_Click('25')">
+            <img src="~/Images/Production.png">
+            <h4>Production</h4>
+        </div>*@
+            </div>
+            <div class="users">
+                <div class="card" ng-click="Inventory_Click('11')">
+                    <img src="~/Images/Setting.png">
+                    <h4>Setting</h4>
+                </div>
+                <div class="card" ng-click="Inventory_Click('13')">
+                    <img src="~/Images/Accounts.png">
+                    <h4>Accounts</h4>
+                </div>
+                <div class="card" ng-click="Inventory_Click('18')">
+            <img src="~/Images/Comminication.png" />
+            <h4>Comminication</h4>
+        </div>
+                @*<div class="card" ng-click="Inventory_Click1('50')">
+                    <img src="~/Images/design.png">
+                    <h4>Security</h4>
+                </div>*@
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

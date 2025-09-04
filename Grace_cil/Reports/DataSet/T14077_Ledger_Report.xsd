@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="T14077_Ledger_Report" targetNamespace="http://tempuri.org/T14077_Ledger_Report.xsd" xmlns:mstns="http://tempuri.org/T14077_Ledger_Report.xsd" xmlns="http://tempuri.org/T14077_Ledger_Report.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="T14077_Ledger_Report" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="T14077_Ledger_Report" msprop:Generator_UserDSName="T14077_Ledger_Report">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T14077_Ledger_Report" msprop:Generator_TableClassName="T14077_Ledger_ReportDataTable" msprop:Generator_TableVarName="tableT14077_Ledger_Report" msprop:Generator_TablePropName="_T14077_Ledger_Report" msprop:Generator_RowDeletingName="T14077_Ledger_ReportRowDeleting" msprop:Generator_RowChangingName="T14077_Ledger_ReportRowChanging" msprop:Generator_RowEvHandlerName="T14077_Ledger_ReportRowChangeEventHandler" msprop:Generator_RowDeletedName="T14077_Ledger_ReportRowDeleted" msprop:Generator_UserTableName="T14077_Ledger_Report" msprop:Generator_RowChangedName="T14077_Ledger_ReportRowChanged" msprop:Generator_RowEvArgName="T14077_Ledger_ReportRowChangeEvent" msprop:Generator_RowClassName="T14077_Ledger_ReportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="T_VOUCHER_CODE" msprop:Generator_ColumnVarNameInTable="columnT_VOUCHER_CODE" msprop:Generator_ColumnPropNameInRow="T_VOUCHER_CODE" msprop:Generator_ColumnPropNameInTable="T_VOUCHER_CODEColumn" msprop:Generator_UserColumnName="T_VOUCHER_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PROJECT_NAME" msprop:Generator_ColumnVarNameInTable="columnT_PROJECT_NAME" msprop:Generator_ColumnPropNameInRow="T_PROJECT_NAME" msprop:Generator_ColumnPropNameInTable="T_PROJECT_NAMEColumn" msprop:Generator_UserColumnName="T_PROJECT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PARTY_NAME" msprop:Generator_ColumnVarNameInTable="columnT_PARTY_NAME" msprop:Generator_ColumnPropNameInRow="T_PARTY_NAME" msprop:Generator_ColumnPropNameInTable="T_PARTY_NAMEColumn" msprop:Generator_UserColumnName="T_PARTY_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_HEAD_NAME" msprop:Generator_ColumnVarNameInTable="columnT_HEAD_NAME" msprop:Generator_ColumnPropNameInRow="T_HEAD_NAME" msprop:Generator_ColumnPropNameInTable="T_HEAD_NAMEColumn" msprop:Generator_UserColumnName="T_HEAD_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_TOTAL_TAKA" msprop:Generator_ColumnVarNameInTable="columnT_TOTAL_TAKA" msprop:Generator_ColumnPropNameInRow="T_TOTAL_TAKA" msprop:Generator_ColumnPropNameInTable="T_TOTAL_TAKAColumn" msprop:Generator_UserColumnName="T_TOTAL_TAKA" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

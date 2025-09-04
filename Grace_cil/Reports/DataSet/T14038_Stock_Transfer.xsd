@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="T14038_Stock_Transfer" targetNamespace="http://tempuri.org/T14038_Stock_Transfer.xsd" xmlns:mstns="http://tempuri.org/T14038_Stock_Transfer.xsd" xmlns="http://tempuri.org/T14038_Stock_Transfer.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="T14038_Stock_Transfer" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="T14038_Stock_Transfer" msprop:Generator_UserDSName="T14038_Stock_Transfer">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T14038_Stock_Stansfer" msprop:Generator_TableClassName="T14038_Stock_StansferDataTable" msprop:Generator_TableVarName="tableT14038_Stock_Stansfer" msprop:Generator_TablePropName="T14038_Stock_Stansfer" msprop:Generator_RowDeletingName="T14038_Stock_StansferRowDeleting" msprop:Generator_RowChangingName="T14038_Stock_StansferRowChanging" msprop:Generator_RowEvHandlerName="T14038_Stock_StansferRowChangeEventHandler" msprop:Generator_RowDeletedName="T14038_Stock_StansferRowDeleted" msprop:Generator_UserTableName="T14038_Stock_Stansfer" msprop:Generator_RowChangedName="T14038_Stock_StansferRowChanged" msprop:Generator_RowEvArgName="T14038_Stock_StansferRowChangeEvent" msprop:Generator_RowClassName="T14038_Stock_StansferRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="T_PRODUCT_CODE" msprop:Generator_ColumnVarNameInTable="columnT_PRODUCT_CODE" msprop:Generator_ColumnPropNameInRow="T_PRODUCT_CODE" msprop:Generator_ColumnPropNameInTable="T_PRODUCT_CODEColumn" msprop:Generator_UserColumnName="T_PRODUCT_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="SHOP_NAME" msprop:Generator_ColumnVarNameInTable="columnSHOP_NAME" msprop:Generator_ColumnPropNameInRow="SHOP_NAME" msprop:Generator_ColumnPropNameInTable="SHOP_NAMEColumn" msprop:Generator_UserColumnName="SHOP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnT_PRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="T_PRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="T_PRODUCT_NAMEColumn" msprop:Generator_UserColumnName="T_PRODUCT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_PACK_NAME" msprop:Generator_ColumnVarNameInTable="columnT_PACK_NAME" msprop:Generator_ColumnPropNameInRow="T_PACK_NAME" msprop:Generator_ColumnPropNameInTable="T_PACK_NAMEColumn" msprop:Generator_UserColumnName="T_PACK_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_QUANTITY" msprop:Generator_ColumnVarNameInTable="columnT_QUANTITY" msprop:Generator_ColumnPropNameInRow="T_QUANTITY" msprop:Generator_ColumnPropNameInTable="T_QUANTITYColumn" msprop:Generator_UserColumnName="T_QUANTITY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

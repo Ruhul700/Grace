@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "T14035";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Apps/Inventory/Transaction/T14035Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<div class="" ng-app="Glorious" ng-controller="T14035Controller">
+    @*header*@
+    <div ng-show="loading" style="position: absolute;padding-left: 48%; margin-top:60px"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Stock List</span>
+        <div class="header-right">
+            @*<a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>*@
+            <a><span title="Refresh" ng-click="Refresh_Click()" class="glyphicon glyphicon-refresh"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+            <a><span title="Print 2" ng-click="Print_2_Click()" class="glyphicon glyphicon-print"></span></a>
+            @*<a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>*@
+        </div>
+    </div>
+    @*===========*@
+<div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+    @*<table class="inputTable center" style=" width: 80%;">
+        <tr>
+            <td style=" width: 20%;">
+                <label class="textlevel">Product Name</label>
+            </td>
+            <td>
+                <select id="{{$index}}ddlProduct" class="form-control" name="Z.product" style="border-radius: 0.35em;width:100%" placeholder="Select one" ng-model="obj.ddlProduct" ng-change="ddlProduct_click(obj.ddlProduct)" ng-options=" S.T_PRODUCT_NAME for S in obj.productList track by S.T_PRODUCT_CODE">
+                    <option value="">Select</option>
+                </select>
+            </td>
+            <td style=" width: 20%;">
+                <label class="textlevel">Pack Name</label>
+            </td>
+            <td>
+                <select id="{{$index}}ddlPack" class="form-control" name="Z.Pack" style="border-radius: 0.35em;width:100%" placeholder="Select one" ng-model="obj.ddlPack" ng-change="ddlPack_click(obj.ddlPack)"
+                        ng-options=" P.T_PACK_NAME for P in obj.packList track by P.T_PACK_CODE">
+                    <option value="">Select</option>
+                </select>
+            </td>
+        </tr>
+    </table>*@
+    <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+    <table class="inputTable center" style=" width: 95%;">
+        <tr>
+            <td style=" width: 20%;">
+                <label class="textlevel" style="text-align:left">Total Sale: <span style="margin-left:15px">{{obj.TotalStock}}</span></label>
+            </td>
+            <td style=" width: 80%; margin-right: 0; text-align: -webkit-right;">
+                <input class="form-control" id="myInput" type="text" placeholder="Search.." ng-model="Search">
+            </td>
+        </tr>
+    </table>
+
+    <table id="tblGrid" class="tTable center" style=" width: 95%; margin-top: 5px;">
+        <thead>
+            <tr style="color: black;text-align: center;background: #afadad" class="summary-table-header">                
+                <th style="width: 10%;font-size: 18px;">Code</th>
+                <th style="width: 30%;font-size: 18px;">Product Name</th>
+                <th style="width: 10%;font-size: 18px;">Weight</th>
+                <th style="width: 20%;font-size: 18px;">Category</th>
+                <th style="width: 10%;font-size: 18px;">Pack Size</th>
+                <th style="width: 10%;font-size: 18px;">Stk(Box)</th>
+                <th style="width: 10%;font-size: 18px;">Stk (Piece)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Z in obj.StockList|filter:Search">               
+                <td style="width: 10%;">{{Z.T_PRODUCT_CODE}}</td>
+                <td style="width: 30%; text-align: left">{{Z.T_PRODUCT_NAME}}</td>
+                <td style="width: 10%">{{Z.T_PACK_WEIGHT}}</td>
+                <td style="width: 20%; text-align: left">{{Z.T_TYPE_NAME}}</td>
+                <td style="width: 10%">{{Z.T_PACK_NAME}}</td>
+                <td style="width: 10%">{{Z.T_STOCK_BOX}}</td>
+                <td style="width: 10%">{{Z.T_STOCK_PIECE}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
+
+
+

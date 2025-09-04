@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "T14042";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table-scroll-header-fix tbody {
+        display: block;
+        min-height: 0vh !important;
+        max-height: 65vh !important;
+        overflow-x: auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .table-scroll-header-fix thead, tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .table-scroll-header-fix thead {
+        width: calc( 100% - 0em )
+    }
+
+    .table-scroll-header-fix table {
+        width: 100%;
+    }
+</style>
+<script src="~/Apps/Inventory/Transaction/T14042Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<div class="" ng-app="Glorious" ng-controller="T14042Controller">
+    @*header*@
+    <div ng-show="loading" style="position: absolute;padding-left: 48%; margin-top:60px"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Sale Verify</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            @*<a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+                <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>*@
+        </div>
+    </div>
+    @*===========*@
+<div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+    <table class="inputTable center" style=" width: 95%;">
+        <tr>
+            <td style=" width: 60%;">
+                <label class="textlevel" style="text-align:left">Total Sale Verify: <span style="margin-left:15px">{{obj.TotalSaleVerify}}</span></label>
+            </td>
+            <td style=" width: 20%;">
+                <label class="textlevel">Memo No</label>
+            </td>
+            <td style=" width: 20%;margin-right:0;"><input class="form-control" id="myInput" type="text" placeholder="Search.."> </td>
+        </tr>
+    </table>
+    <div class="table-scroll-header-fix">
+        <table id="tblGrid" class="tTable center" style=" width: 95%;">
+            <thead>
+                <tr style="color: black;text-align: center;background: #afadad" class="summary-table-header">
+                    <th style="width: 10%;font-size: 18px;">Memo No</th>
+                    <th style="width: 20%;font-size: 18px;">Cust Name</th>
+                    <th style="width: 7%;font-size: 18px;">Qut</th>
+                    <th style="width: 10%;font-size: 18px;">Total Sale</th>
+                    <th style="width: 10%;font-size: 18px;">Discount</th>
+                    <th style="width: 10%;font-size: 18px;">Pament</th>
+                    <th style="width: 8%;font-size: 18px;">Due</th>
+                    <th style="width: 10%;font-size: 18px;">Emp Name</th>
+                    <th style="width: 10%;font-size: 18px;">Sale Date</th>
+                    <th style="width: 5%;font-size: 18px;">Verify</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="P in obj.SaleVerifyList">
+                    <td style="width: 10%">{{P.T_MEMO_NO}}</td>
+                    <td style="width: 20%">{{P.T_CUSTOMER_NAME}}</td>
+                    <td style="width: 7%">{{P.T_SALE_TOTAL}} </td>
+                    <td style="width: 10%">{{P.T_GRAND_TOTAL}} </td>
+                    <td style="width: 10%">{{P.T_DISCOUNT}} </td>
+                    <td style="width: 10%">{{P.T_PAMENT}}</td>
+                    <td style="width: 8%">{{P.T_DUE}}</td>
+                    <td style="width: 10%">{{P.T_EMP_NAME}}</td>
+                    <td style="width: 10%">{{P.T_ENTRY_DATE}}</td>
+                    <td style="width: 5%"><input type="checkbox" ng-model="P.T_VERIFY_FLG" ng-true-value="'1'" ng-false-value="'0'" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
+</div>
+

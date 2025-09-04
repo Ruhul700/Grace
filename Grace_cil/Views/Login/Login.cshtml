@@ -1,0 +1,139 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Header.css" rel="stylesheet" />
+<link href="~/Content/Login.css" rel="stylesheet" />
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/dirPagination.js"></script>
+<script src="~/Scripts/angular-sanitize.js"></script>
+<script src="~/Scripts/select.js"></script>
+<script src="~/Scripts/smsalert.js"></script>
+<script src="~/Scripts/Module/fileUploader.js"></script>
+<script src="~/Scripts/angular-base64-upload.js"></script>
+<script src="~/Apps/app.js"></script>
+<script src="~/Scripts/fileUploader.js"></script>
+<script src="~/Apps/CommonController/MenuController.js"></script>
+<script src="~/Apps/CommonService/MenuService.js"></script>
+<link href="~/Content/Custom.css" rel="stylesheet" />
+<link href="~/Content/modal.css" rel="stylesheet" />
+<script src="~/Apps/CommonController/LoginController.js"></script>
+<script src="~/Apps/CommonService/LogingService.js"></script>
+<style>
+    /*body {font-family: Arial, Helvetica, sans-serif;}
+    form {border: 3px solid #f1f1f1;}
+    */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        /*background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px*/;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    .account {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+        width: 20%;
+        border-radius: 50%;
+    }
+
+    .login {
+        padding: 0px;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @@media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+
+    .imag {
+        background-image: url('Images/Asset 14.png');
+    }
+    /* ==============*/
+
+</style>
+<html>
+@*style="background-image: url('Images/Background.png'); "*@
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+
+<body ng-app="Grace">
+    <div class="" ng-app="Grace" ng-controller="LoginController">
+        <div ng-show="loading" style="position: absolute;padding-left: 48%; margin-top:60px"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+        <div class="row col-lg-12 col-md-12 col-sm-12">
+            <div class="wrapper">
+                <div class="logo">
+                    <img src="~/Images/Login.jpg" />
+                </div>
+                <div class="text-center mt-4 name">
+                    Crace Consumer Ind Ltd
+                </div>
+                <div class="p-3 mt-3">
+                    <div class="form-field d-flex align-items-center">
+                        <span class="far fa-user"></span>
+                        <input type="text" class="form-control rounded-left" ng-model="obj.T12000.User_Name" placeholder="Username" required>
+                    </div>
+                    <div class="form-field d-flex align-items-center">
+                        <span class="fas fa-key"></span>
+                        <input type="password" class="form-control rounded-left" ng-model="obj.T12000.Password" ng-keypress="enter_press($event)" placeholder="Password" required>
+                    </div>
+                    <button type="submit" ng-click="Login_click()" class="btn">Login</button>
+                </div>
+                <div class="text-center fs-6">
+                    <a href="#">Forget password?</a> or <a href="#">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

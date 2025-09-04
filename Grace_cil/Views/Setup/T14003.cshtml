@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "T14003";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Apps/Inventory/Setup/T14003Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<script src="~/Apps/Service/ImageService.js"></script>
+<style>
+    .selected {
+        background-color: #80c8e4ba;
+        /* color: white;*/
+        font-weight: bold;
+    }
+</style>
+<div class="" ng-app="InteriorExp" ng-controller="T14003Controller">
+    @*header*@
+    <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Product Setup</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+            <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>
+        </div>
+    </div>
+    @*===========*@
+    <div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+        <table class="inputTable center" style=" width:100%; margin-bottom: 15px;">
+            <tr>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Code</label>
+                </td>
+                <td style="width: 10%; text-align: left; ">
+                    <input type="text" ng-model="obj.T14003.T_PRODUCT_CODE" ng-dblclick="openProductModel('Product')" class="form-control" readonly />
+                </td>
+                <td style=" width: 5%;">
+                    <label id="lblType" class="textlevel">Catagory</label>
+                </td>
+                <td colspan="3" style="width: 20%; text-align: left; ">
+                    <select id="ddlType" class="form-control" placeholder="Select one" tabindex="1"
+                            ng-model="obj.ddlType"
+                            ng-change="obj.Catagory(obj.ddlType)"
+                            ng-options="V.T_TYPE_NAME for V in obj.TypeList track by V.T_TYPE_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+                <td style=" width: 10%;">
+                    <label id="lblName" class="textlevel">Name</label>
+                </td>
+                <td colspan="5" style="width: 45%;">
+                    <input id="txtName" type="text" style="max-width:100% !important" ng-model="obj.T14003.T_PRODUCT_NAME" class="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td style=" width: 10%;">
+                    <label id="lblPackName" class="textlevel">Pack Size</label>
+                </td>
+                <td style="width: 10%; text-align: left; ">
+                    <input id="txtPackName" type="text" ng-model="obj.T14003.T_PACK_NAME" class="form-control" />
+                </td>
+                <td style=" width: 5%;">
+                    <label id="lblPackWeight" ng-show="isShow_Wet" class="textlevel">Model</label>
+                    <label ng-show="isShow_Size" class="textlevel">Pro Size</label>
+                </td>
+                <td style="width: 10%; text-align: left; ">
+                    <input id="txtPackWeight" type="text" ng-model="obj.T14003.T_PACK_WEIGHT" class="form-control" />
+                </td>
+                <td style=" width: 5%;">
+                    <label id="lblUM" class="textlevel">UM</label>
+                </td>
+                <td style="width: 5%; text-align: left; ">
+                    <input id="txtUM" type="text" ng-model="obj.T14003.T_UM" class="form-control" />
+                </td>
+                <td style=" width: 10%;">
+                    <label id="lblPurchasePrice" class="textlevel">Pur Price</label>
+                </td>
+                <td style="width: 10%; text-align: left; ">
+                    <input id="txtPurchasePrice" type="number" ng-model="obj.T14003.T_PURCHASE_PRICE" class="form-control" />
+                </td>
+                <td style=" width: 8%;">
+                    <label id="lblHoleSalePrice" class="textlevel">Hole S.Pre</label>
+                </td>
+                <td style="width: 10%; text-align: left; ">
+                    <input id="txtHoleSalePrice" type="number" ng-model="obj.T14003.T_HOLE_SALE_PRICE" class="form-control" />
+                </td>
+                <td style=" width: 7%;">
+                    <label id="lblRetailSalePrice" class="textlevel">Rtl S.Pre</label>
+                </td>
+                <td style="width: 10%; text-align: left; ">
+                    <input id="txtRetailSalePrice" type="number" ng-model="obj.T14003.T_RETAIL_SALE_PRICE" class="form-control" />
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <label style="width:35%"></label>
+                </td>
+                <td colspan="7">
+                    <div style="background:#ffffff;height: 120px;border-radius: 15px;padding: 15px">
+                        <input type='file' name="attachment" onchange="angular.element(this).scope().imageUpload(event)" data-ak-file-model="obj.T14003.attachment" />
+
+                        <div ng-repeat="step in stepsModel">
+                            <img class="thumb" style="width: 150px; height: 130px;" ng-src="{{step}}" ng-model="imgDiv" />
+                        </div>
+                        <div ng-show="imgDiv">
+                            <img class="thumb" src="~/Images/{{obj.T14003.T_PRODUCT_IMAGE}}" style="width: 150px; height: 130px;" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+
+        </table>
+        <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+        <div style="width: 50%;margin:auto">
+            <table class="inputTable center" style=" width: 100%;">
+                <tr><td style="text-align: -webkit-right;"> <input type="text" style="width:200px" ng-model="Search" placeholder="Search....." class="form-control" /></td></tr>
+            </table>
+            <table id="tblGrid" class="tTable center" style=" width: 100%;">
+                <thead>
+                    <tr style="color: black;background: #afadad" class="summary-table-header">
+                        <th style="width: 20%;">Code</th>
+                        <th style="width: 20%;">Catagory</th>
+                        <th style="width: 40%;">Name</th>
+                        <th style="width: 20%;">Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="Z in obj.griDataList|filter:Search|itemsPerPage:5" $index pagination-id="details" ng-class="{'selected':$index == selectedRow}" ng-click="setProductRow($index,Z)" style="cursor:pointer">
+                        <td style="width: 20%;">{{Z.T_PRODUCT_CODE}}</td>
+                        <td style="width: 20%; text-align: left; padding-left: 10px;">{{Z.T_TYPE_NAME}}</td>
+                        <td style="width: 50%; text-align: left; padding-left: 10px;">{{Z.T_PRODUCT_NAME}}</td>
+                        <td style="width: 10%; text-align: left; padding-left: 10px;">
+                            <img src="~/Images/{{Z.T_PRODUCT_IMAGE}}" style="width: 30px; height: 30px;" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls pagination-id="details" max-size="5"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+
+        </div>
+    </div>
+    @*modal memolist start*@
+    <div id="Product" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-head">
+                <span class="closemodal" ng-click="closeModal('Memolist')">&times;</span>
+                <h5>Memo list</h5>
+            </div>
+            <div class="modal-body">
+                <table id="tblPopup" class="popupTable">
+                    <tr>
+                        <th style="width:30%">Invoice No</th>
+                        <th style="width:40%">Customer Name</th>
+                        <th style="width:30%">Type</th>
+                    </tr>
+                    <tbody id="tboodPopup">
+                        <tr dir-paginate="X in obj.InvoiceList|itemsPerPage:15" $index pagination-id="invoicePag" ng-class="{'selected':$index == MemoNoRow}" ng-click="setMemoNoRow($index,X)" style="cursor:pointer">
+                            <td style="width:30%">{{X.T_INVOICE_NO}}</td>
+                            <td style="width:40%">{{X.T_CUSTOMER_NAME}}</td>
+                            <td style="width:30%">{{X.T_TYPE_NAME}}</td>
+                            @*<td style="width:30%" hidden>{{X.T_ENTRY_DATE}}</td>
+                                <td style="width:30%" hidden>{{X.T_TYPE_NAME}}</td>*@
+                        </tr>
+                    </tbody>
+
+                </table>
+                <dir-pagination-controls pagination-id="invoicePag" max-size="5"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+    @*modal memolist end*@
+</div>
+

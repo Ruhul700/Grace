@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "AS12011";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Apps/Account/Controller/Setup/AS12011Controller.js"></script>
+<script src="~/Apps/Account/Service/Setup/AS12011Service.js"></script>
+<style>
+    .selected {
+        background-color: #80c8e4ba;
+        /* color: white;*/
+        font-weight: bold;
+    }
+</style>
+<div class="" ng-app="Accounts_Management" ng-controller="AS12011Controller">
+    @*header*@
+    <div ng-show="loading" style="position: absolute; padding-left: 48%; margin-top: 60px; z-index: 1"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Department</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+            <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>
+        </div>
+    </div>
+    @*===========*@
+    <div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+        <table class="inputTable center" style=" width: 90%;">
+            <tr>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Department Name</label>
+                </td>
+                <td style="width: 20%; text-align: left; ">
+                    <input type="text" ng-model="obj.AS12011.DEPARTMENT_NAME" class="form-control" />
+                </td>
+            </tr>
+        </table>
+        <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+        <div style="width: 95%;">
+            <table class="inputTable center" style=" width: 50%;">
+                <tr><td style="text-align: -webkit-right;"> <input type="text" style="width:200px" ng-model="Search" placeholder="Search....." class="form-control" /></td></tr>
+            </table>
+
+            <table id="tblGrid" class="tTable center" style=" width: 50%;">
+                <thead>
+                    <tr style="color: black;background: #afadad" class="summary-table-header">
+                        <th style="width: 10%;">Department Code</th>
+                        <th style="width: 20%;">Department Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="Z in obj.griDataList|filter:Search|itemsPerPage:10" $index pagination-id="dataList" ng-class="{'selected':$index == selectedRow}" ng-click="setProductRow($index,Z)" style="cursor:pointer">
+                        <td style="width: 10%;">{{Z.DEPARTMENT_CODE}}</td>
+                        <td style="width: 20%; text-align: left; padding-left: 10px;">{{Z.DEPARTMENT_NAME}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls pagination-id="details" max-size="5"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+
+        </div>
+    </div>
+
+</div>
+
+

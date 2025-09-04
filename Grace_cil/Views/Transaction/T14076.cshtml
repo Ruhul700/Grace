@@ -1,0 +1,212 @@
+﻿
+@{
+    ViewBag.Title = "T14076";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Apps/Inventory/Transaction/T14076Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<style>
+
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .table-scroll-header-fix tbody {
+        display: block;
+        min-height:0 !important;
+       max-height: 28vh !important;
+        /*  overflow-y: hidden;*/
+        overflow-x: auto;
+    }
+
+    .table-scroll-header-fix thead, tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .table-scroll-header-fix thead {
+        width: calc( 100% - 0em )
+    }
+
+    .table-scroll-header-fix table {
+        width: 100%;
+    }
+
+    .selected {
+        background-color: #80c8e4ba;
+        /* color: white;*/
+        font-weight: bold;
+    }
+</style>
+
+<div class="" ng-app="Glorious" ng-controller="T14076Controller">
+    @*header*@
+    <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Voucher Entry</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+            <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>
+        </div>
+    </div>
+    @*===========*@
+    <div id="clothPurchase" class="tabcontent">
+        <table class="inputTable center" style=" width: 96%;">
+            <tr>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Voucher No</label>
+                </td>
+                <td style="width:15%">
+                    <input type="text" id="txtInvoicNo" ng-model="obj.T14076.T_VOUCHER_ID" ng-dblclick="openInvoiceModal('Memolist')" readonly class="form-control" maxlength="6" />
+                </td>
+                <td style=" width: 10%;"><label class="textlevel">Project</label></td>
+                <td style="width:20%">
+                    <select id="ddlProject" class="form-control" placeholder="Select one"
+                            ng-model="obj.ddlProject"                            
+                            ng-options=" V.T_PROJECT_NAME for V in obj.ProjectList track by V.T_PROJECT_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                   
+                </td>
+                <td style=" width: 20%;">
+                    <label class="textlevel">Pay By</label>
+                </td>
+                <td style="width:25%">
+                    <select id="ddlPayBy" class="form-control" placeholder="Select one"
+                            ng-model="obj.ddlParty"                           
+                            ng-options=" P.T_PARTY_NAME for P in obj.partyList track by P.T_PARTY_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+
+            </tr>
+            
+        </table>
+        <hr />
+        <div class=" table-scroll-header-fix" style="margin-top:10px">
+            <table id="mytable1" class="tTable center" style="width: 50%">
+                <thead>
+                    <tr>
+                        <th style="width:5%" scope="col"><span style="color: white; font-size: 30px; font-weight:600;cursor:pointer;" ng-click="AddRow_Click()">+</span></th>
+                        <th style="width:5%" scope="col">SL</th>
+                        <th style="width:50%" scope="col">Header</th>
+                        <th style="width:30%" scope="col">Descriptin</th>
+                        <th style="width:15%" scope="col">Taka</th>                        
+                    </tr>
+                </thead>
+                <tbody id="tbody" style="">
+                    <tr ng-repeat="Z in obj.dataList">
+                        <td style="width:5%"><span style="color: red; font-size: 20px;cursor:pointer;" ng-click="removeRow($index,Z)" class="glyphicon glyphicon-trash"></span>
+                        </td>
+                        <td style="width:5%">{{Z.sl}} </td>
+                        <td style="width:50%">
+                            <select id="{{$index}}ddlheader" class="form-control" name="Z.product" style="border-radius: 0.35em;width:100%" placeholder="Select one" tabindex="{{$index+4}}"
+                                    ng-model="Z.ddlheader"
+                                    ng-change="getSalePrice($index,Z)"
+                                    ng-options=" S.T_HEAD_NAME for S in obj.HeaderList track by S.T_HEAD_CODE">
+                                <option value="0">Select</option>
+                            </select>
+                        </td>                        
+                        <td style="width:30%">
+                            <input type="text" id="{{$index}}txtPrice" style=" width: 100%;" ng-model="Z.T_DESCRIPTION" class="form-control" tabindex="{{$index+4}}" />
+                        </td>
+                        <td style="width:15%">
+                            <input type="number" id="{{$index}}txtTaka" ng-keyup="keyup_quentity( $index,Z)" style=" width: 100%; text-align: right;" ng-model="Z.T_TOTAL_TAKA" class="form-control" tabindex="{{$index+4}}" />
+                        </td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="">
+            <table class="tTable center" style="width:50%">
+                <tr style="height:40px">
+                    <td colspan="4" style=" text-align: right; font-weight: bold;">
+                    </td>
+                    <td style=" width: 15%; text-align: right; font-weight: bold;">
+                        {{obj.T14076.T_TOTAL_TAKA}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    @*modal memolist start*@
+    <div id="Memolist" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-head">
+                <span class="closemodal" ng-click="closeModal('Memolist')">&times;</span>
+                <h5>Memo list</h5>
+            </div>
+            <div class="modal-body">
+                <table id="tblPopup" class="popupTable">
+                    <tr>
+                        <th style="width:30%">Invoice No</th>
+                        <th style="width:40%">Customer Name</th>
+                        <th style="width:30%">Type</th>
+                    </tr>
+                    <tbody id="tboodPopup">
+                        <tr dir-paginate="X in obj.InvoiceList|itemsPerPage:15" $index pagination-id="invoicePag" ng-class="{'selected':$index == MemoNoRow}" ng-click="setMemoNoRow($index,X)" style="cursor:pointer">
+                            <td style="width:30%">{{X.T_INVOICE_NO}}</td>
+                            <td style="width:40%">{{X.T_CUSTOMER_NAME}}</td>
+                            <td style="width:30%">{{X.T_TYPE_NAME}}</td>
+                            @*<td style="width:30%" hidden>{{X.T_ENTRY_DATE}}</td>
+                                <td style="width:30%" hidden>{{X.T_TYPE_NAME}}</td>*@
+                        </tr>
+                    </tbody>
+
+                </table>
+                <dir-pagination-controls pagination-id="invoicePag" max-size="5"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+    @*modal memolist end*@
+    @*custormer modal start*@
+    <div id="customerList" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-head">
+                <span class="closemodal" ng-click="closeModal('customerList')">&times;</span>
+                <h5>Customer List</h5>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td style="text-align: -webkit-right;">
+                            <input type="text" style="width:200px" ng-model="Search" placeholder="Search....." class="form-control" />
+                        </td>
+                    </tr>
+                </table>
+                <table id="tblPopup" class="popupTable">
+                    <tr>
+                        <th style="width:30%">Name</th>
+                        <th style="width:20%">Mobile</th>
+                        <th style="width:50%">Address</th>
+                    </tr>
+                    <tbody id="tboodPopup">
+                        <tr dir-paginate="X in obj.CustomerList|filter:Search|itemsPerPage:15" $index pagination-id="dataList" ng-class="{'selected':$index == MemoNoRow}" ng-click="setCustomerRow($index,X)" style="cursor:pointer">
+                            <td style="width:30%">{{X.T_CUSTOMER_NAME}}</td>
+                            <td style="width:20%">{{X.T_CUSTOMER_MOBILE}}</td>
+                            <td style="width:50%">{{X.T_CUSTOMER_ADDRESS}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dir-pagination-controls pagination-id="dataList" max-size="5"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+    @*custormer modal end*@
+</div>
+
+
+

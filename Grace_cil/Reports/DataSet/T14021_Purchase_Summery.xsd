@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="T14021_Purchase_Summery" targetNamespace="http://tempuri.org/T14021_Purchase_Summery.xsd" xmlns:mstns="http://tempuri.org/T14021_Purchase_Summery.xsd" xmlns="http://tempuri.org/T14021_Purchase_Summery.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="T14021_Purchase_Summery" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="T14021_Purchase_Summery" msprop:Generator_UserDSName="T14021_Purchase_Summery">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="T14021_Purchase_Summary" msprop:Generator_TableClassName="T14021_Purchase_SummaryDataTable" msprop:Generator_TableVarName="tableT14021_Purchase_Summary" msprop:Generator_TablePropName="T14021_Purchase_Summary" msprop:Generator_RowDeletingName="T14021_Purchase_SummaryRowDeleting" msprop:Generator_RowChangingName="T14021_Purchase_SummaryRowChanging" msprop:Generator_RowEvHandlerName="T14021_Purchase_SummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="T14021_Purchase_SummaryRowDeleted" msprop:Generator_UserTableName="T14021_Purchase_Summary" msprop:Generator_RowChangedName="T14021_Purchase_SummaryRowChanged" msprop:Generator_RowEvArgName="T14021_Purchase_SummaryRowChangeEvent" msprop:Generator_RowClassName="T14021_Purchase_SummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="T_INVOICE_NO" msprop:Generator_ColumnVarNameInTable="columnT_INVOICE_NO" msprop:Generator_ColumnPropNameInRow="T_INVOICE_NO" msprop:Generator_ColumnPropNameInTable="T_INVOICE_NOColumn" msprop:Generator_UserColumnName="T_INVOICE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="T_CUSTOMER_NAME" msprop:Generator_ColumnVarNameInTable="columnT_CUSTOMER_NAME" msprop:Generator_ColumnPropNameInRow="T_CUSTOMER_NAME" msprop:Generator_ColumnPropNameInTable="T_CUSTOMER_NAMEColumn" msprop:Generator_UserColumnName="T_CUSTOMER_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_TYPE_NAME" msprop:Generator_ColumnVarNameInTable="columnT_TYPE_NAME" msprop:Generator_ColumnPropNameInRow="T_TYPE_NAME" msprop:Generator_ColumnPropNameInTable="T_TYPE_NAMEColumn" msprop:Generator_UserColumnName="T_TYPE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_TOTAL_QUT" msprop:Generator_ColumnVarNameInTable="columnT_TOTAL_QUT" msprop:Generator_ColumnPropNameInRow="T_TOTAL_QUT" msprop:Generator_ColumnPropNameInTable="T_TOTAL_QUTColumn" msprop:Generator_UserColumnName="T_TOTAL_QUT" type="xs:string" minOccurs="0" />
+              <xs:element name="T_TOTAL_PRICE" msprop:Generator_ColumnVarNameInTable="columnT_TOTAL_PRICE" msprop:Generator_ColumnPropNameInRow="T_TOTAL_PRICE" msprop:Generator_ColumnPropNameInTable="T_TOTAL_PRICEColumn" msprop:Generator_UserColumnName="T_TOTAL_PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_CASH" msprop:Generator_ColumnVarNameInTable="columnT_CASH" msprop:Generator_ColumnPropNameInRow="T_CASH" msprop:Generator_ColumnPropNameInTable="T_CASHColumn" msprop:Generator_UserColumnName="T_CASH" type="xs:string" minOccurs="0" />
+              <xs:element name="T_DUE" msprop:Generator_ColumnVarNameInTable="columnT_DUE" msprop:Generator_ColumnPropNameInRow="T_DUE" msprop:Generator_ColumnPropNameInTable="T_DUEColumn" msprop:Generator_UserColumnName="T_DUE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnT_EMP_NAME" msprop:Generator_ColumnPropNameInRow="T_EMP_NAME" msprop:Generator_ColumnPropNameInTable="T_EMP_NAMEColumn" msprop:Generator_UserColumnName="T_EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="T_ENTRY_DATE" msprop:Generator_ColumnVarNameInTable="columnT_ENTRY_DATE" msprop:Generator_ColumnPropNameInRow="T_ENTRY_DATE" msprop:Generator_ColumnPropNameInTable="T_ENTRY_DATEColumn" msprop:Generator_UserColumnName="T_ENTRY_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="T_VERIFY_FLG" msprop:Generator_ColumnVarNameInTable="columnT_VERIFY_FLG" msprop:Generator_ColumnPropNameInRow="T_VERIFY_FLG" msprop:Generator_ColumnPropNameInTable="T_VERIFY_FLGColumn" msprop:Generator_UserColumnName="T_VERIFY_FLG" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

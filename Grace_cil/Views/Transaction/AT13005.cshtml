@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "AT13005";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Apps/Account/Controller/Transaction/AT13005Controller.js"></script>
+<script src="~/Apps/Account/Service/Transaction/AT13005Service.js"></script>
+
+<div class="" ng-app="Glorious" ng-controller="AT13005Controller">
+    @*header*@
+    <div ng-show="loading" style="position: absolute; padding-left: 48%; margin-top: 60px; z-index: 1"><img src="~/Images/working1.gif" style="height: 50px;z-index:1"></div>
+    <div class="header">
+        <span href="#default" class="logo">Voucher Entry</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+            <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>
+        </div>
+    </div>
+    @*===========*@
+    <div style="margin-left:0px;text-align:center" class="row col-lg-12 col-md-12 col-sm-12">
+        <table class="inputTable center" style=" width: 98%;">
+            <tr>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Center</label>
+                </td>
+                <td style="width: 90%; text-align: left; ">
+                    <select id="ddlCenter" class="form-control" placeholder="Select one"
+                            ng-model="obj.ddlCenter"
+                            ng-options="V.CENTER_NAME for V in obj.CenterList track by V.CENTER_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 1px solid #076c93b0; " />
+        <table class="inputTable center" style=" width: 98%;">
+
+            <tr>
+                <td style=" width: 10%;"><label class="textlevel">Voucher No</label></td>
+                <td style="width:20%">
+                    <input type="text" ng-model="obj.AT13001.VOUCHER_NO" class="form-control" ng-dblclick="voucherPopup('Voucherlist')" readonly />
+                </td>
+                <td style=" width: 13%;">
+                    <label class="textlevel">Voucher Type</label>
+                </td>
+                <td style="width:20%">
+                    <select id="ddlVoucher" class="form-control" placeholder="Select one"
+                            ng-model="obj.ddlVoucher"
+                            ng-options=" V.VAUCHER_TYPE_NAME for V in obj.VoucherTypeList track by V.VAUCHER_TYPE_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+                <td style=" width: 13%;">
+                    <label class="textlevel">Trans.Type</label>
+                </td>
+                <td style="width:24%">
+                    <select id="ddlTrans" class="form-control" placeholder="Select one"
+                            ng-model="obj.ddlTrans"
+                            ng-options=" T.TRANSACTION_TYPE_NAME for T in obj.TransList track by T.TRANSACTION_TYPE_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style=" width: 10%;"><label class="textlevel">Voucher Date</label></td>
+                <td style="width:20%">
+                    <input type="date" ng-model="obj.AT13001.DATE" class="form-control" />
+                </td>
+                <td style=" width: 13%;">
+                    <label class="textlevel">Party Type</label>
+                </td>
+                <td style="width:20%">
+                    <select id="ddlPartyType" class="form-control" placeholder="Select one"
+                            ng-model="obj.ddlPartyType"
+                            ng-change="obj.SelectPartyType()"
+                            ng-options=" PT.PARTY_TYPE_NAME for PT in obj.PartyTypeList track by PT.PARTY_TYPE_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+                <td style=" width: 13%;">
+                    <label class="textlevel">Party</label>
+                </td>
+                <td style="width:24%">
+                    <select id="ddlParty" class="form-control" placeholder="Select one"
+                            ng-model="obj.ddlParty"
+                            ng-options=" P.PARTY_NAME for P in obj.PartyList track by P.PARTY_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <hr style="margin-top: 5px !important; margin-bottom: 10px !important; border-top: 1px solid #076c93b0; " />
+        <div>
+            @*class=" table-bordered tblborder table-responsive table-fixed"*@
+            <table id="tblGrid" class="tTable center" style=" width: 98%;">
+                <thead>
+                    <tr style="color: black;text-align: center;background: #afadad" class="summary-table-header">
+                        <th style="width: 5%;text-align: center;">
+                            <span style="color: white; font-size: 20px" ng-click="AddRow_Click($index)" class="glyphicon glyphicon-plus"></span>
+
+                        </th>
+                        <th style="width: 3%;font-size: 18px;">SL</th>
+                        <th style="width: 15%;text-align: center;font-size: 18px;">Account Head</th>
+                        <th style="width: 15%;font-size: 18px;">Party</th>
+                        <th style="width: 10%;font-size: 18px;">Department</th>
+                        <th style="width: 15%;font-size: 18px;">Purpose</th>
+                        <th style="width: 17%;font-size: 18px;">Narration</th>
+                        <th style="width: 10%;font-size: 18px;">Debit</th>
+                        <th style="width: 10%;font-size: 18px;">Credit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Z in obj.dataList">
+                        <td style="width: 5%;text-align:center">
+                            <span style="color: red; font-size: 20px" ng-click="removeRow($index,Z)" class="glyphicon glyphicon-trash"></span>
+                        </td>
+                        <td style="width: 3%">{{Z.sl}}</td>
+                        <td style="width: 15%">
+                            <select id="{{$index}}ddlActHead" class="form-control" name="Z.Pack" tabindex="{{$index+8}}"
+                                    ng-model="Z.ddlActHead"
+                                    ng-options=" Ac.ACCOUNT_HEADER_NAME for Ac in obj.ActHeaderList track by Ac.ACCOUNT_HEADER_CODE">
+                                <option value="">Select one</option>
+                            </select>
+
+                        </td>
+
+                        <td style="width: 15%">
+                            <select id="{{$index}}ddlParry" class="form-control" placeholder="Select one" tabindex="{{$index+8}}"
+                                    ng-model="Z.ddlParry"
+                                    ng-options=" P.PARTY_NAME for P in obj.PartyList track by P.PARTY_CODE">
+                                <option value="">Select One</option>
+                            </select>
+
+                        </td>
+                        <td style="width: 10%">
+                            <select id="{{$index}}ddlDepartment" class="form-control" name="Z.Pack" tabindex="{{$index+8}}"
+                                    ng-model="Z.ddlDepartment"
+                                    ng-options=" D.DEPARTMENT_NAME for D in obj.DepartmentList track by D.DEPARTMENT_CODE">
+                                <option value="">Select one</option>
+                            </select>
+                        </td>
+                        <td style="width: 15%">
+                            <select id="{{$index}}ddlpurpuse" class="form-control" name="Z.Pack" tabindex="{{$index+8}}"
+                                    ng-model="Z.ddlpurpuse"
+                                    ng-options=" Pu.PURPOSE_NAME for Pu in obj.PurposeList track by Pu.PURPOSE_CODE">
+                                <option value="">Select one</option>
+                            </select>
+                        </td>
+
+                        <td style="width: 17%">
+                            <input type="text" style=" width: 100%;" ng-model="Z.VOU_DESCRIPTION" class="form-control" tabindex="{{$index+8}}" />
+                        </td>
+                        <td style="width: 10%">
+                            <input type="text" style=" width: 100%; text-align: right" ng-model="Z.DEBIT" ng-keyup="keyup_debit($event, $index)" class="form-control" placeholder="0" tabindex="{{$index+8}}" />
+                        </td>
+                        <td style="width: 10%">
+                            <input type="text" style=" width: 100%; text-align: right" ng-model="Z.CREDIT" ng-keyup="keyup_credit($event, $index)" class="form-control" placeholder="0" tabindex="{{$index+8}}" />
+                        </td>
+
+                    </tr>
+                    <tr style="height:40px">
+                        <td colspan="7" style="text-align:right;font-size:20px;font-weight:bold;padding-right:10px">Total</td>
+                        <td style="text-align: right; padding-right: 12px; font-weight: bold">{{obj.TOTAL_DEBIT}}</td>
+                        <td style="text-align: right; padding-right: 12px; font-weight: bold">{{obj.TOTAL_CREDIT}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- The Modal VoucherList-->
+    <div id="Voucherlist" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-head">
+                <span class="closemodal" ng-click="closeModal('Voucherlist')">&times;</span>
+                <h5>Voucher list</h5>
+            </div>
+            <div class="modal-body">
+                <table id="tblPopup" class="popupTable" style=" width: 100%;">
+                    <tr>
+                        <th style="width:20%">Voucher No</th>
+                        <th style="width:40%">Center</th>
+                        <th style="width:40%">Date</th>
+                    </tr>
+                    <tbody id="tboodPopup">
+                        <tr dir-paginate="X in obj.VoucherList|itemsPerPage:7" $index pagination-id="dataList" ng-class="{'selected':$index == MemoNoRow}" ng-click="setVoucherRow($index,X)" style="cursor:pointer">
+                            <td style="width:20%">{{X.VOUCHER_NO}}</td>
+                            <td style="width:40%">{{X.CENTER_NAME}}</td>
+                            <td style="width:40%">{{X.VOUCHER_DATE}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dir-pagination-controls pagination-id="dataList" max-size="5"
+                                         direction-links="true"
+                                         boundary-links="true">
+                </dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "T14077";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <script src="~/Apps/Inventory/Transaction/T14077Controller.js"></script>
+    <script src="~/Apps/Service/Service.js"></script>
+    <div class="" ng-app="Glorious" ng-controller="T14077Controller">
+        @*header*@
+        <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+        <div class="header">
+            <span href="#default" class="logo">Vouchar list</span>
+            <div class="header-right">
+                @*<a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>*@
+                <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+                <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+                @*   <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>*@
+            </div>
+        </div>
+        @*===========*@
+        <div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+            <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+            <table class="inputTable center" style=" width: 90%;">
+                <tr>
+                    <td style=" width: 20%;">
+                        <label class="textlevel" style="text-align:left">Total : <span style="margin-left:15px">{{obj.TotalSummery}}</span></label>
+                    </td>
+                    <td style=" width: 80%;"> </td>
+                </tr>
+            </table>
+
+            <table id="tblGrid" class="tTable center" style=" width: 100%;">
+                <thead>
+                    <tr style="color: black;text-align: center;background: #afadad" class="summary-table-header">
+                        <th style="width: 10%;font-size: 18px;">Code</th>
+                        <th style="width: 25%;text-align: center;font-size: 18px;">Project Name</th>
+                        <th style="width: 25%;font-size: 18px;">Party Name</th>
+                        <th style="width: 25%;font-size: 18px;">Head Name</th>
+                        <th style="width: 15%;font-size: 18px;">Total Taka </th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="Z in obj.ProductList">
+                        <td style="width: 10%">{{Z.T_VOUCHER_CODE}}</td>
+                        <td style="width: 25%">{{Z.T_PROJECT_NAME}}</td>
+                        <td style="width: 25%">{{Z.T_PARTY_NAME}} </td>
+                        <td style="width: 25%">{{Z.T_HEAD_NAME}} </td>
+                        <td style="width: 15%">{{Z.T_TOTAL_TAKA}} </td>
+                                               
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+
+
