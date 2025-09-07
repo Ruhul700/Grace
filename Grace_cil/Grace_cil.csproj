@@ -144,6 +144,7 @@
     <Compile Include="Controllers\H00001Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Inventory\Report\R14041Controller.cs" />
+    <Compile Include="Controllers\Inventory\Setup\T11010Controller.cs" />
     <Compile Include="Controllers\Inventory\Setup\T11101Controller.cs" />
     <Compile Include="Controllers\Inventory\Setup\T11102Controller.cs" />
     <Compile Include="Controllers\Inventory\Setup\T11103Controller.cs" />
@@ -240,6 +241,7 @@
     <Content Include="Apps\CommonService\LogingService.js" />
     <Content Include="Apps\CommonService\MenuService.js" />
     <Content Include="Apps\Inventory\Report\R14041Controller.js" />
+    <Content Include="Apps\Inventory\Setup\T11010Controller.js" />
     <Content Include="Apps\Inventory\Setup\T11101Controller.js" />
     <Content Include="Apps\Inventory\Setup\T11102Controller.js" />
     <Content Include="Apps\Inventory\Setup\T11103Controller.js" />
@@ -1412,11 +1414,13 @@
     <Content Include="Views\Transaction\T18020.cshtml" />
     <Content Include="Views\Transaction\T18021.cshtml" />
     <Content Include="Views\Transaction\T11019.cshtml" />
+    <Content Include="Views\Setup\T11010.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\H00001\" />
     <Folder Include="Views\Report\" />
+    <Folder Include="Views\T11010\" />
     <Folder Include="Views\T11019\" />
     <Folder Include="Views\T11020\" />
   </ItemGroup>

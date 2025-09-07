@@ -52,6 +52,7 @@
     <Compile Include="Common\MenuDAL.cs" />
     <Compile Include="Common\T10000DAL.cs" />
     <Compile Include="DAL\Inventory\Report\R14041DAL.cs" />
+    <Compile Include="DAL\Inventory\Setup\T11010DAL.cs" />
     <Compile Include="DAL\Inventory\Setup\T11101DAL.cs" />
     <Compile Include="DAL\Inventory\Setup\T11102DAL.cs" />
     <Compile Include="DAL\Inventory\Setup\T11103DAL.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="DAL\Inventory\Transaction\T18021DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Inventory\Setup\T0000.cs" />
+    <Compile Include="Shared\Inventory\Setup\T11010.cs" />
     <Compile Include="Shared\Inventory\Setup\T11101.cs" />
     <Compile Include="Shared\Inventory\Setup\T11102.cs" />
     <Compile Include="Shared\Inventory\Setup\T11103.cs" />
