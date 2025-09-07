@@ -10,9 +10,11 @@ namespace Grace_DAL.DAL.Inventory.Transaction
         public DataTable LoadData()
         {
             DataTable dt = new DataTable();
-            dt = Query("select LOGIN_ID,T_EMP_ID,T00001.T_USER_NAME T_USER_ID, T_USER_PASS,T_ROLE,T11104.T_ROLL_NAME, T11020.T_USER_NAME , T11020.T_USER_MOBILE,T_ACTIVE_FLAG from T00001 JOIN T11104 ON T00001.T_ROLE =T11104.T_ROLL_CODE JOIN T11020 ON T00001.T_EMP_ID =T11020.T_USER_CODE ORDER BY LOGIN_ID DESC");
+            dt = Query($@"select LOGIN_ID,T_EMP_ID,T00001.T_USER_NAME T_USER_ID,T_USER_PASS, T_ROLE, T11104.T_ROLL_NAME, T11020.T_USER_NAME,T11020.T_USER_MOBILE, T_ACTIVE_FLAG, T11010.T_OUTLET_CODE, T11010.T_OUTLET_NAME from T00001
+            JOIN T11104 ON T00001.T_ROLE = T11104.T_ROLL_CODE JOIN T11020 ON T00001.T_EMP_ID = T11020.T_USER_CODE left JOIN T11010 ON T00001.T_OUTLET_CODE = T11010.T_OUTLET_CODE ORDER BY LOGIN_ID DESC");
             return dt;
         }
+
         public DataTable GetUserDetails()
         {
             DataTable dt = new DataTable();
@@ -25,7 +27,14 @@ namespace Grace_DAL.DAL.Inventory.Transaction
             dt = Query("select T_ROLL_CODE, T_ROLL_NAME  from T11104 ");
             return dt;
 
-        }        
+        }
+        public DataTable GetOutletData()
+        {
+            DataTable dt = new DataTable();
+            dt = Query("select T_OUTLET_CODE,T_OUTLET_NAME  from T11010 ");
+            return dt;
+
+        }
         public string SaveData(T11021Data t11021)
         {
             string sms = "";
@@ -34,7 +43,7 @@ namespace Grace_DAL.DAL.Inventory.Transaction
             {
                 var chk = Query($"select count(*)T_COUNT from T00001 where T_USER_NAME='{t11021.T_USER_NAME}'").Rows[0]["T_COUNT"].ToString();
                 if (chk=="1") { return "User Id already exist-0"; }
-                var sa = Command($"INSERT INTO T00001 (T_EMP_ID,T_USER_NAME,T_USER_PASS,T_ROLE,T_SITE_CODE,T_ACTIVE_FLAG) VALUES('{t11021.T_EMP_ID}','{t11021.T_USER_NAME}','{t11021.T_USER_PASS}','{t11021.T_ROLE}','{t11021.T_SITE_CODE}','{t11021.T_ACTIVE_FLAG}')");
+                var sa = Command($"INSERT INTO T00001 (T_EMP_ID,T_USER_NAME,T_USER_PASS,T_ROLE,T_SITE_CODE,T_OUTLET_CODE,T_ACTIVE_FLAG) VALUES('{t11021.T_EMP_ID}','{t11021.T_USER_NAME}','{t11021.T_USER_PASS}','{t11021.T_ROLE}','{t11021.T_SITE_CODE}','{t11021.T_OUTLET_CODE}','{t11021.T_ACTIVE_FLAG}')");
                 if (sa == true)
                 {
                     sms = "Save Successfully-1";
@@ -46,7 +55,7 @@ namespace Grace_DAL.DAL.Inventory.Transaction
             }
             else
             {
-                var sa = Command($"UPDATE T00001 SET T_EMP_ID='{t11021.T_EMP_ID}',T_USER_NAME='{t11021.T_USER_NAME}',T_USER_PASS='{t11021.T_USER_PASS}',T_ROLE='{t11021.T_ROLE}',T_SITE_CODE='{t11021.T_SITE_CODE}',T_ACTIVE_FLAG='{t11021.T_ACTIVE_FLAG}' WHERE LOGIN_ID ='{t11021.LOGIN_ID}'");
+                var sa = Command($"UPDATE T00001 SET T_EMP_ID='{t11021.T_EMP_ID}',T_USER_NAME='{t11021.T_USER_NAME}',T_USER_PASS='{t11021.T_USER_PASS}',T_ROLE='{t11021.T_ROLE}',T_SITE_CODE='{t11021.T_SITE_CODE}',T_OUTLET_CODE='{t11021.T_OUTLET_CODE}',T_ACTIVE_FLAG='{t11021.T_ACTIVE_FLAG}' WHERE LOGIN_ID ='{t11021.LOGIN_ID}'");
                 if (sa == true)
                 {
                     sms = "Update Successfully-1";

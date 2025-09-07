@@ -23,7 +23,22 @@ namespace Grace_cil.Controllers.Inventory.Transaction
             {
                 return Json(ex.Message, JsonRequestBehavior.AllowGet);
             }
-        }        
+        }
+        [HttpPost]
+        public ActionResult GetOutletData()
+        {
+            try
+            {
+                var data = repository.GetOutletData();
+                string JSONString = string.Empty;
+                JSONString = JsonConvert.SerializeObject(data);
+                return Json(JSONString, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+        }
         [HttpPost]
         public ActionResult RollData()
         {

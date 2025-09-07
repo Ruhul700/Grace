@@ -8,11 +8,20 @@
         loadGridData();
         loadRollData();
         userDetails();
+        loadOutletData();
         function loadRollData() {
             loader(true)
             var gender = Service.loadDataWithoutParm('/T11021/RollData');
             gender.then(function (returnData) {
                 $scope.obj.rollDataList = JSON.parse(returnData);
+                loader(false)
+            });
+        }
+        function loadOutletData() {
+            loader(true)
+            var gender = Service.loadDataWithoutParm('/T11021/GetOutletData');
+            gender.then(function (returnData) {
+                $scope.obj.outletDataList = JSON.parse(returnData);
                 loader(false)
             });
         }
@@ -34,6 +43,7 @@
             $scope.obj.T11021.T_USER_NAME = $scope.obj.T11021.T_USER_ID;
             $scope.obj.T11021.T_USER_PASS = $scope.obj.T11021.T_USER_PASS;
             $scope.obj.T11021.T_ROLE = $scope.obj.ddlRoll.T_ROLL_CODE;
+            $scope.obj.T11021.T_OUTLET_CODE = $scope.obj.ddlOutlet.T_OUTLET_CODE;
             var save = Service.saveData('/T11021/SaveData',$scope.obj.T11021);
             save.then(function (returnData) {
                 smsAlert(returnData)
@@ -54,6 +64,7 @@
             $scope.obj.T11021.T_USER_PASS = data.T_USER_PASS;
             $scope.obj.T11021.T_ACTIVE_FLAG = data.T_ACTIVE_FLAG;
             $scope.obj.ddlRoll = { T_ROLL_CODE: data.T_ROLE, T_ROLL_NAME: data.T_ROLL_NAME };
+            $scope.obj.ddlOutlet = { T_OUTLET_CODE: data.T_OUTLET_CODE, T_OUTLET_NAME: data.T_OUTLET_NAME };
         }
         function userDetails() {
             var employee = Service.loadDataWithoutParm('/T11021/GetUserDetails');

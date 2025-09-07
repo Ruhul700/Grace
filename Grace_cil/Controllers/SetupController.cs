@@ -119,6 +119,28 @@ namespace Grace_cil.Controllers
                 return RedirectToAction("Login", "Login");
             }
         }
+        public ActionResult T11010()
+        {
+            if (!string.IsNullOrEmpty(Session["T_ROLE"] as string))
+            {
+                var role = Session["T_ROLE"].ToString();
+                var data = repository.Parmision("T11010", role);
+                if (data.Rows.Count > 0)
+                {
+                    return View();
+                }
+                else
+                {
+                    Session.Clear();
+                    return RedirectToAction("Login", "Login");
+                }
+            }
+            else
+            {
+                Session.Clear();
+                return RedirectToAction("Login", "Login");
+            }
+        }
         public ActionResult T14002()
         {
 
