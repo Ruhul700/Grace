@@ -32,6 +32,7 @@ namespace Grace_cil.Controllers
                         {
                             Session["T_EMP_ID"] = i["T_EMP_ID"].ToString();
                             Session["T_SITE_CODE"] = i["T_SITE_CODE"].ToString();
+                            Session["T_OUTLET_CODE"] = i["T_OUTLET_CODE"].ToString();
                             //  Session["LOGIN_PASS"] = i["LOGIN_PASS"].ToString();
                             //  Session["LOGIN_CODE"] = i["LOGIN_CODE"].ToString();
                             Session["T_ROLE"] = i["T_ROLE"].ToString();
