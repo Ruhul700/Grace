@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "T16005";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Apps/Inventory/Setup/T16005Controller.js"></script>
+<script src="~/Apps/Service/Service.js"></script>
+<style>
+    .selected {
+        background-color: #80c8e4ba;
+        /* color: white;*/
+        font-weight: bold;
+    }
+</style>
+<div class="" ng-app="InteriorExp" ng-controller="T16005Controller">
+    @*header*@
+    <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
+    <div class="header">
+        <span href="#default" class="logo">Gender</span>
+        <div class="header-right">
+            <a><span title="Save" ng-click="Save_Click()" class="glyphicon glyphicon-floppy-disk"></span></a>
+            <a><span title="Clear" ng-click="Clear_Click()" class="glyphicon glyphicon-erase"></span></a>
+            <a><span title="Print" ng-click="Print_Click()" class="glyphicon glyphicon-print"></span></a>
+            <a><span title="Delete" ng-click="Delet_Click()" class="glyphicon glyphicon-trash"></span></a>
+        </div>
+    </div>
+    @*===========*@
+    <div style="margin-left:0px; margin-top:10px" class="row col-lg-12 col-md-12 col-sm-12">
+        <table class="inputTable center" style=" width: 50%;">
+            <tr>
+                <td style=" width: 10%;">
+                    <label class="textlevel">Code</label>
+                </td>
+                <td style="width: 10%; text-align: left; ">
+                    <input type="text" ng-model="obj.T16005.T_CONTAINER_CODE" class="form-control" readonly />
+                </td>
+                <td style=" width: 15%;">
+                    <label class="textlevel">Container Name</label>
+                </td>
+                <td style="width: 30%; text-align: left; ">
+                    <input type="text" ng-model="obj.T16005.T_CONTAINER_NAME" class="form-control" />
+                </td>
+
+                <td style=" width: 15%;">
+                    <label class="textlevel">Capacity</label>
+                </td>
+                <td style="width: 20%; text-align: left; ">
+                    <input type="text" ng-model="obj.T16005.T_CAPACITY" class="form-control" />
+                </td>
+
+            </tr>
+        </table>
+        <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />
+        <div style="width: 50%;margin:auto">
+            <table class="inputTable center" style=" width: 100%;">
+                <tr><td style="text-align: -webkit-right;"> <input type="text" style="width:200px" ng-model="Search" placeholder="Search....." class="form-control" /></td></tr>
+            </table>
+            <table id="tblGrid" class="tTable center" style=" width: 100%;">
+                <thead>
+                    <tr style="color: black;background: #afadad" class="summary-table-header">
+                        <th style="width: 20%;">Code</th>
+                        <th style="width: 40%;">Container NameName</th>
+                        <th style="width: 40%;">Capacity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="Z in obj.griDataList|filter:Search|itemsPerPage:10" $index pagination-id="details" ng-class="{'selected':$index == selectedRow}" ng-click="setGenderRow($index,Z)" style="cursor:pointer">
+                        <td style="width: 20%;">{{Z.T_CONTAINER_CODE}}</td>
+                        <td style="width: 40%; text-align: left; padding-left: 10px;">{{Z.T_CONTAINER_NAME}}</td>
+                        <td style="width: 40%; text-align: left; padding-left: 10px;">{{Z.T_CAPACITY}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls pagination-id="details" max-size="5"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
