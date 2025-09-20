@@ -17,7 +17,9 @@ namespace Grace_cil.Controllers.Inventory.Transaction
             try
             {
                 var shopId = Session["site"].ToString();
-                var data = repository.GetReceiveSummery(paramList, shopId);
+                var user = Session["T_EMP_ID"].ToString();
+                var roleCode = Session["T_ROLE"].ToString();
+                var data = repository.GetReceiveSummery(paramList, shopId,user, roleCode);
                 string JSONString = string.Empty;
                 JSONString = JsonConvert.SerializeObject(data);
                 return Json(JSONString, JsonRequestBehavior.AllowGet);
