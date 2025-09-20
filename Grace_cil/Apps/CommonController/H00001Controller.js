@@ -17,9 +17,9 @@
                 else if (module == '35' && jsonData == '1') {
                     window.location.href = "/Transaction/T14035";
                 }
-                //else if (jsonData == '25') {
-                //    window.location.href = "/Transaction/T14025";
-                //}
+                else if (module == '25' && jsonData == '1') {
+                    window.location.href = "/Transaction/T14025";
+                }
                 else if (module == '11' && jsonData == '1') {
                     window.location.href = "/Transaction/T11020";
                 }

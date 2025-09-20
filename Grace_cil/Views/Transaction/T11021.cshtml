@@ -50,8 +50,14 @@
                 <td style=" width: 5%;">
                     <label class="textlevel"> Mobile</label>
                 </td>
-                <td colspan="2" style="width: 10%; text-align: left; ">
+                <td style="width: 10%; text-align: left; ">
                     <input id="txtMobile" type="text" ng-model="obj.T11021.T_USER_MOBILE" class="form-control" readonly />
+                </td>
+                <td style=" width: 5%;">
+                    <label class="textlevel"> Active</label>
+                </td>
+                <td style="width: 5%; text-align: left; ">
+                    <input type="checkbox" ng-model="obj.T11021.T_ACTIVE_FLAG" ng-true-value="'1'" ng-false-value="'0'" />
                 </td>
             </tr>
             <tr>
@@ -88,12 +94,7 @@
                     <input id="txtPassword" type="text" ng-model="obj.T11021.T_USER_PASS" class="form-control pincode" />
                 </td>
 
-                <td style=" width: 5%;">
-                    <label class="textlevel"> Active</label>
-                </td>
-                <td style="width: 5%; text-align: left; ">
-                    <input type="checkbox" ng-model="obj.T11021.T_ACTIVE_FLAG" ng-true-value="'1'" ng-false-value="'0'" />
-                </td>
+               
             </tr>
         </table>
         <hr style="margin-top: 5px !important; margin-bottom: 5px !important; border-top: 2px solid #076c93b0; " />

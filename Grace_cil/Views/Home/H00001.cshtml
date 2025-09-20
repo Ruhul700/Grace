@@ -30,7 +30,7 @@
 </head>
 <body ng-app="Grace">
     <div class="container" ng-app="Grace" ng-controller="H00001Controller">
-        <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>       
+        <div ng-show="loading" class="loder"><img src="~/Images/working1.gif" style="height: 50px;"></div>
         <section class="main">
             <div class="main-top">
                 <h1> Grace Consumer Ind Ltd</h1>
@@ -43,15 +43,11 @@
                 <div class="card" ng-click="Inventory_Click('40')">
                     <img src="~/Images/Sales.png">
                     <h4>Sales</h4>
-                </div>
-                <div class="card" ng-click="Inventory_Click('35')">
-                    <img src="~/Images/inventory.png" />
-                    <h4>Stock</h4>
-                </div>
-                @*<div class="card" ng-click="Inventory_Click('25')">
-            <img src="~/Images/Production.png">
-            <h4>Production</h4>
-        </div>*@
+                </div>               
+                <div class="card" ng-click="Inventory_Click('25')">
+                        <img src="~/Images/Production.png">
+                        <h4>Production</h4>
+                    </div>
             </div>
             <div class="users">
                 <div class="card" ng-click="Inventory_Click('11')">
@@ -62,14 +58,18 @@
                     <img src="~/Images/Accounts.png">
                     <h4>Accounts</h4>
                 </div>
-                <div class="card" ng-click="Inventory_Click('18')">
+                <div class="card" ng-click="Inventory_Click('35')">
+                    <img src="~/Images/inventory.png" />
+                    <h4>Stock</h4>
+                </div>
+                @*<div class="card" ng-click="Inventory_Click('18')">
             <img src="~/Images/Comminication.png" />
             <h4>Comminication</h4>
-        </div>
+        </div>*@
                 @*<div class="card" ng-click="Inventory_Click1('50')">
-                    <img src="~/Images/design.png">
-                    <h4>Security</h4>
-                </div>*@
+            <img src="~/Images/design.png">
+            <h4>Security</h4>
+        </div>*@
             </div>
         </section>
     </div>
