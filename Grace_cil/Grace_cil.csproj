@@ -159,6 +159,7 @@
     <Compile Include="Controllers\Inventory\Setup\T14070Controller.cs" />
     <Compile Include="Controllers\Inventory\Setup\T14071Controller.cs" />
     <Compile Include="Controllers\Inventory\Setup\T14072Controller.cs" />
+    <Compile Include="Controllers\Production\Setup\T16005Controller.cs" />
     <Compile Include="Controllers\Inventory\Transaction\T11019Controller.cs" />
     <Compile Include="Controllers\Inventory\Transaction\T11020Controller.cs" />
     <Compile Include="Controllers\Inventory\Transaction\T11021Controller.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Controllers\Inventory\Transaction\TestController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\Production\Transaction\T16020Controller.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SetupController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
@@ -280,6 +282,7 @@
     <Content Include="Apps\Inventory\Transaction\T14047Controller.js" />
     <Content Include="Apps\Inventory\Transaction\T14048Controller.js" />
     <Content Include="Apps\Inventory\Transaction\T14049Controller.js" />
+    <Content Include="Apps\Production\Transaction\T16020Controller.js" />
     <Content Include="Apps\Inventory\Transaction\T18020Controller.js" />
     <Content Include="Apps\Inventory\Transaction\T18021Controller.js" />
     <Content Include="Apps\Service\Accounts\Report\AR14001Service.js" />
@@ -1415,14 +1418,21 @@
     <Content Include="Views\Transaction\T18021.cshtml" />
     <Content Include="Views\Transaction\T11019.cshtml" />
     <Content Include="Views\Setup\T11010.cshtml" />
+    <Content Include="Views\Setup\T16005.cshtml" />
+    <Content Include="Views\Transaction\T16020.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Apps\Production\Report\" />
+    <Folder Include="Apps\Production\Setup\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Production\Report\" />
     <Folder Include="Views\H00001\" />
     <Folder Include="Views\Report\" />
     <Folder Include="Views\T11010\" />
     <Folder Include="Views\T11019\" />
     <Folder Include="Views\T11020\" />
+    <Folder Include="Views\T16005\" />
+    <Folder Include="Views\T16020\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

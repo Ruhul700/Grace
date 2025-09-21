@@ -1,12 +1,3 @@
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\Grace_DAL.dll
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\Grace_DAL.pdb
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.csproj.CoreCompileInputs.cache
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.csproj.CopyComplete
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.dll
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.pdb
-D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.csproj.AssemblyReference.cache
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\bin\Debug\Grace_DAL.dll
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\bin\Debug\Grace_DAL.pdb
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
@@ -16,3 +7,11 @@ D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.csproj.CoreC
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.csproj.CopyComplete
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.dll
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.pdb
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.csproj.CoreCompileInputs.cache
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\Grace_DAL.dll
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\Grace_DAL.pdb
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.csproj.CopyComplete
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.dll
+D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.pdb

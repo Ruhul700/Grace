@@ -67,6 +67,7 @@
     <Compile Include="DAL\Inventory\Setup\T14070DAL.cs" />
     <Compile Include="DAL\Inventory\Setup\T14071DAL.cs" />
     <Compile Include="DAL\Inventory\Setup\T14072DAL.cs" />
+    <Compile Include="DAL\Production\Setup\T16005DAL.cs" />
     <Compile Include="DAL\Inventory\Transaction\T11019DAL.cs" />
     <Compile Include="DAL\Inventory\Transaction\T11020DAL.cs" />
     <Compile Include="DAL\Inventory\Transaction\T11021DAL.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="DAL\Inventory\Transaction\T14077DAL.cs" />
     <Compile Include="DAL\Inventory\Transaction\T18020DAL.cs" />
     <Compile Include="DAL\Inventory\Transaction\T18021DAL.cs" />
+    <Compile Include="DAL\Production\Transaction\T16020DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Inventory\Setup\T0000.cs" />
     <Compile Include="Shared\Inventory\Setup\T11010.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="Shared\Inventory\Setup\T14070.cs" />
     <Compile Include="Shared\Inventory\Setup\T14071.cs" />
     <Compile Include="Shared\Inventory\Setup\T14072.cs" />
+    <Compile Include="Shared\Production\Setup\T16005.cs" />
     <Compile Include="Shared\Inventory\Transaction\T11019.cs" />
     <Compile Include="Shared\Inventory\Transaction\T11020.cs" />
     <Compile Include="Shared\Inventory\Transaction\T11021.cs" />
@@ -134,7 +137,11 @@
     <Compile Include="Shared\Inventory\Transaction\T14077.cs" />
     <Compile Include="Shared\Inventory\Transaction\T18020.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DAL\Production\Report\" />
+    <Folder Include="Shared\Production\Report\" />
+    <Folder Include="Shared\Production\Transaction\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
