@@ -7,6 +7,7 @@ D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.csproj.CoreC
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.csproj.CopyComplete
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.dll
 D:\Dot Net C#\Git Project\Grace\Grace\Grace_DAL\obj\Debug\Grace_DAL.pdb
+<<<<<<< Updated upstream
 D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.csproj.CoreCompileInputs.cache
 D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\Grace_DAL.dll
 D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\Grace_DAL.pdb
@@ -15,3 +16,14 @@ D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\bin\Debug\System.Config
 D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.csproj.CopyComplete
 D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.dll
 D:\Dot Net C#\Grace Consumer Ind Ltd\Grace_cil\Grace_DAL\obj\Debug\Grace_DAL.pdb
+=======
+D:\GIT PROJECTS\GRACE\Grace_DAL\bin\Debug\Grace_DAL.dll
+D:\GIT PROJECTS\GRACE\Grace_DAL\bin\Debug\Grace_DAL.pdb
+D:\GIT PROJECTS\GRACE\Grace_DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\GIT PROJECTS\GRACE\Grace_DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\GIT PROJECTS\GRACE\Grace_DAL\obj\Debug\Grace_DAL.csproj.AssemblyReference.cache
+D:\GIT PROJECTS\GRACE\Grace_DAL\obj\Debug\Grace_DAL.csproj.CoreCompileInputs.cache
+D:\GIT PROJECTS\GRACE\Grace_DAL\obj\Debug\Grace_DAL.csproj.CopyComplete
+D:\GIT PROJECTS\GRACE\Grace_DAL\obj\Debug\Grace_DAL.dll
+D:\GIT PROJECTS\GRACE\Grace_DAL\obj\Debug\Grace_DAL.pdb
+>>>>>>> Stashed changes
