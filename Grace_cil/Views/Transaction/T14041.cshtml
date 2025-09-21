@@ -46,11 +46,37 @@
         <table class="inputTable center" style=" width: 90%;">
             <tr>
                 <td style=" width: 10%;">
+                    <label class="textlevel">Site</label>
+                </td>
+                <td style=" width: 15%;">
+                    <select style=" width: 98%;" id="ddlSite" class="form-control" placeholder="Select one" tabindex="5"
+                            ng-model="obj.ddlSite"
+                            ng-change="onSiteChange(obj.ddlSite)"
+                            ng-options=" V.T_SITE_NAME for V in obj.SiteList track by V.T_SITE_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+
+                <td style=" width: 10%;">
+                    <label class="textlevel">Outlet</label>
+                </td>
+                <td style=" width: 15%;">
+                    <select style=" width: 98%;" id="ddlOutlet" class="form-control" placeholder="Select one" tabindex="5"
+                            ng-model="obj.ddlOutlet"
+                            ng-change="onOutletChange(obj.ddlOutlet)"
+                            ng-options=" V.T_OUTLET_NAME for V in obj.OutletList track by V.T_OUTLET_CODE">
+                        <option value="">Select One</option>
+                    </select>
+                </td>
+
+
+                <td style=" width: 10%;">
                     <label class="textlevel">From Date</label>
                 </td>
                 <td style="width: 20%; text-align: left; ">
                     <input type="date" ng-model="obj.T14041.FROM_DATE" ng-change="date_click()" class="form-control" />
                 </td>
+
                 <td style=" width: 10%;">
                     <label class="textlevel">To Date</label>
                 </td>
