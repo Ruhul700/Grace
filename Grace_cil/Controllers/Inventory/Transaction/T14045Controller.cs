@@ -18,7 +18,8 @@ namespace Grace_cil.Controllers.Inventory.Transaction
             try
             {
                 var shopId = Session["site"].ToString();
-                var data = repository.GetSaleReceiveData(shopId);
+                var user = Session["T_EMP_ID"].ToString();
+                var data = repository.GetSaleReceiveData(shopId, user);
                 string JSONString = string.Empty;
                 JSONString = JsonConvert.SerializeObject(data);
                 return Json(JSONString, JsonRequestBehavior.AllowGet);
@@ -37,7 +38,9 @@ namespace Grace_cil.Controllers.Inventory.Transaction
             {
                 var user = Session["T_EMP_ID"].ToString();
                 var shopId = Session["site"].ToString();
-                var data = repository.SaveReceivePayment(list, user, shopId);
+                var outletCode = Session["T_OUTLET_CODE"].ToString();
+                var siteCode = Session["T_SITE_CODE"].ToString();
+                var data = repository.SaveReceivePayment(list, user, shopId, outletCode,siteCode);
                 return Json(data, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

@@ -9,10 +9,15 @@ namespace Grace_DAL.DAL.Inventory.Transaction
 {
     public class T14046DAL:CommonDAL
     {
-        public DataTable GetReceiveVerifyData(string shopId)
+        public DataTable GetReceiveVerifyData(string shopId,string userCode)
         {
             DataTable sql = new DataTable();
-            sql = Query($@"SELECT ROW_NUMBER() OVER(Order by T_BALANCE_ID)SL,T_BALANCE_ID, T14080.T_MEM_INV_NO, T14010.T_CUSTOMER_NAME,T14010.T_CUSTOMER_ID, T_PAYMENT, T_DUE, T14080.T_ENTRY_DATE, T11020.T_USER_NAME T_EMP_NAME FROM T14080 JOIN T14010 ON T14080.T_CUSTOMER_ID = T14010.T_CUSTOMER_ID JOIN T11020 ON T14080.T_ENTRY_USER = T11020.T_USER_CODE WHERE T_SHOP_ID='{shopId}' AND T14080.T_FORM_CODE='T14040' AND T14080.T_VERIFY_FLG IS NULL");
+            string condition = string.Empty;
+            if (userCode != "1")
+            {
+                condition = $"AND T14080.T_ENTRY_USER = '{userCode}'";
+            }
+            sql = Query($@"SELECT ROW_NUMBER() OVER(Order by T_BALANCE_ID)SL,T_BALANCE_ID, T14080.T_MEM_INV_NO, T14010.T_CUSTOMER_NAME,T14010.T_CUSTOMER_ID, T_PAYMENT, T_DUE, T14080.T_ENTRY_DATE, T11020.T_USER_NAME T_EMP_NAME FROM T14080 JOIN T14010 ON T14080.T_CUSTOMER_ID = T14010.T_CUSTOMER_ID JOIN T11020 ON T14080.T_ENTRY_USER = T11020.T_USER_CODE WHERE T_SHOP_ID='{shopId}' AND T14080.T_FORM_CODE='T14040' AND T14080.T_VERIFY_FLG IS NULL {condition}");
             return sql;
         }
         public string SaveReceiveVerifyData(List<T14046Data> t14024, string user)

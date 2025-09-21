@@ -1,6 +1,7 @@
 ﻿using Grace_DAL.DAL.Inventory.Transaction;
 using Grace_DAL.Shared.Inventory.Transaction;
 using Microsoft.Reporting.WebForms;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,13 @@ namespace Grace_cil.Controllers.Inventory.Transaction
     {
         T14041DAL repository = new T14041DAL();
         // GET: T14041
-        public ActionResult GetSaleSummery(T14040Parm paramList)
+
+        public ActionResult GetOutletData()
         {
             try
             {
-                var data = repository.GetSaleSummery(paramList.T_FROM_DATE, paramList.T_TO_DATE);
+                var shopId = Session["site"].ToString();
+                var data = repository.GetOutletData();
                 string JSONString = string.Empty;
                 JSONString = JsonConvert.SerializeObject(data);
                 return Json(JSONString, JsonRequestBehavior.AllowGet);
@@ -25,11 +28,47 @@ namespace Grace_cil.Controllers.Inventory.Transaction
             {
                 return Json(ex.Message, JsonRequestBehavior.AllowGet);
             }
+        }
 
+        public ActionResult GetSiteListData()
+        {
+            try
+            {
+                var shopId = Session["site"].ToString();
+                var data = repository.GetSiteData();
+                string JSONString = string.Empty;
+                JSONString = JsonConvert.SerializeObject(data);
+                return Json(JSONString, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult GetSaleSummery(T14040Parm paramList)
+        {
+            try
+            {
+                var user = Session["T_EMP_ID"].ToString();
+                var roleCode = Session["T_ROLE"].ToString();
+                var outletCode = Session["T_OUTLET_CODE"].ToString();
+                var data = repository.GetSaleSummery(paramList.T_FROM_DATE, paramList.T_TO_DATE,user, roleCode, paramList.T_SITE_CODE, paramList.T_OUTLET_CODE);
+                string JSONString = string.Empty;
+                JSONString = JsonConvert.SerializeObject(data);
+                return Json(JSONString, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message, JsonRequestBehavior.AllowGet);
+            }
         }
 
         public ActionResult SaleSummaryReport(string fromDate, string toDate, string shopId)
         {
+            var user = Session["T_EMP_ID"].ToString();
+            var roleCode = Session["T_ROLE"].ToString();
+            var outletCode = Session["T_OUTLET_CODE"].ToString();
             var details = repository.GetSaleSummery(fromDate, toDate);
             // var dueTotal = repository.GetDueTotal(fdate, tdate);
             ReportViewer rv = new ReportViewer();

@@ -52,5 +52,7 @@
         public string T_TO_DATE { get; set; }
         public string T_PRODUCT { get; set; }
         public string T_PACK { get; set; }
+        public string T_SITE_CODE { get; set; }
+        public string T_OUTLET_CODE { get; set; }
     }
 }

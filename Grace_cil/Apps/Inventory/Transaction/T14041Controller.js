@@ -7,14 +7,47 @@
         $scope.obj.T14041.TO_DATE = new Date();
         var fromDate = $filter('date')($scope.obj.T14041.FROM_DATE, 'dd-MM-yyyy');
         var toDate = $filter('date')($scope.obj.T14041.TO_DATE, 'dd-MM-yyyy');
+        getOutletList();
+        getSiteList();
         //---------------
         var shop = Service.loadDataWithoutParm('/H00001/GetShopId');
         shop.then(function (redata) {
             $scope.ShopId = redata;
         });
+
+
+        function getOutletList() {
+            var type = Service.loadDataWithoutParm('/T14041/GetOutletData');
+            type.then(function (returnData) {
+                $scope.obj.OutletList = JSON.parse(returnData);
+            });
+        }
+
+        function getSiteList() {
+            var type = Service.loadDataWithoutParm('/T14041/GetSiteListData');
+            type.then(function (returnData) {
+                $scope.obj.SiteList = JSON.parse(returnData);
+            });
+        }
+
+
+        $scope.onSiteChange = function (data) {
+            console.log(data);
+            $scope.obj.T14041.T_SITE_CODE = data.T_SITE_CODE
+            getSaleSummery($scope.obj.T14041.T_FROM_DATE, $scope.obj.T14041.T_TO_DATE);
+        }
+
+        $scope.onOutletChange = function (data) {
+            console.log(data);
+            $scope.obj.T14041.T_OUTLET_CODE = data.T_OUTLET_CODE
+            getSaleSummery($scope.obj.T14041.T_FROM_DATE,$scope.obj.T14041.T_TO_DATE);
+        }
+
+
         //---------------
         getSaleSummery(fromDate, toDate);
         function getSaleSummery(fromDate, toDate) {
+            debugger;
             $scope.obj.T14041.T_FROM_DATE = fromDate;
             $scope.obj.T14041.T_TO_DATE = toDate;
             var allsummery = Service.loadDataListParm('/T14041/GetSaleSummery', $scope.obj.T14041);

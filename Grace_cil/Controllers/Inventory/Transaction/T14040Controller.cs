@@ -226,7 +226,8 @@ namespace Grace_cil.Controllers.Inventory.Transaction
                 var siteCode = Session["T_SITE_CODE"].ToString();
                 var shopId = Session["site"].ToString();
                 var user = Session["T_EMP_ID"].ToString();
-                var data = repository.SaveData(model, list, shopId, user,siteCode);
+                var outletCode = Session["T_OUTLET_CODE"].ToString();
+                var data = repository.SaveData(model, list, shopId, user,siteCode,outletCode);
                
                // SendSms(t14010, t14013);
                 return Json(data, JsonRequestBehavior.AllowGet);

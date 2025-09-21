@@ -16,7 +16,8 @@ namespace Grace_cil.Controllers.Inventory.Transaction
         {
             try
             {
-                var data = repository.GetSalesVerifyData();
+                var user = Session["T_EMP_ID"].ToString();
+                var data = repository.GetSalesVerifyData(user);
                 string JSONString = string.Empty;
                 JSONString = JsonConvert.SerializeObject(data);
                 return Json(JSONString, JsonRequestBehavior.AllowGet);

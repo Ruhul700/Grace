@@ -17,7 +17,8 @@ namespace Grace_cil.Controllers.Inventory.Transaction
             try
             {
                 var shopId = Session["site"].ToString();
-                var data = repository.GetReceiveVerifyData(shopId);
+                var user = Session["T_EMP_ID"].ToString();
+                var data = repository.GetReceiveVerifyData(shopId, user);
                 string JSONString = string.Empty;
                 JSONString = JsonConvert.SerializeObject(data);
                 return Json(JSONString, JsonRequestBehavior.AllowGet);

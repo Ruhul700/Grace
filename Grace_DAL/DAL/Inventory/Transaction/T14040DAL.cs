@@ -135,7 +135,7 @@ cast((T14005.T_RETAIL_SALE_PRICE/T14004.T_UM)as decimal(12,0) )T_RETAIL_SALE_PRI
             sql = Query($"SELECT T_STOCK  FROM VIEW_STOCK WHERE T_SHOP_ID ='{shopId}' AND T_STOCK !='0' AND T_PRODUCT_CODE = '{pro}'AND T_PACK_CODE = '{pack}'");
             return sql;
         }
-        public string SaveData(T14040Data t14040, List<T14041Data> t14014, string shopId, string user,string siteCode)
+        public string SaveData(T14040Data t14040, List<T14041Data> t14014, string shopId, string user,string siteCode,string outletCode)
         {
             string sms = "";
             string saleId = "";
@@ -202,7 +202,7 @@ cast((T14005.T_RETAIL_SALE_PRICE/T14004.T_UM)as decimal(12,0) )T_RETAIL_SALE_PRI
                         //--------------------------
                         var max_40 = Query_2($"select CASE WHEN COUNT(*)>0 THEN MAX(T_SALE_ID)+1 ELSE 1 END T_SALE_ID from T14040", objConn, objTrans).Rows[0]["T_SALE_ID"].ToString();
                         saleId = max_40;
-                        var save_40 = $"INSERT INTO T14040 (T_SALE_ID,T_MEMO_NO,T_MEMO_SQ, T_CUSTOMER_ID,T_TYPE_CODE, T_GRAND_TOTAL,T_DISCOUNT,T_AFTER_DISCOUNT, T_TOTAL_VAT,T_VAT_TAX,T_PAMENT, T_DUE,T_SALE_TOTAL,T_SALE_DATE,T_SHOP_ID,T_PENDING_FLG,T_ENTRY_USER,T_ENTRY_DATE,T_SITE_CODE)VALUES('{max_40}','{t14040.T_MEMO_NO}', '{t14040.T_MEMO_SQ}',  '{custId}','{t14040.T_TYPE_CODE}', '{t14040.T_GRAND_TOTAL}', '{t14040.T_DISCOUNT}', '{t14040.T_AFTER_DISCOUNT}','{t14040.T_TOTAL_VAT}','{t14040.T_VAT_TAX}', '{t14040.T_PAMENT}','{t14040.T_BALANCE}','{t14040.T_SALE_TOTAL}', '{t14040.T_ENTRY_DATE}','{shopId}','1','{user}','{date}','{siteCode}')";
+                        var save_40 = $"INSERT INTO T14040 (T_SALE_ID,T_MEMO_NO,T_MEMO_SQ, T_CUSTOMER_ID,T_TYPE_CODE, T_GRAND_TOTAL,T_DISCOUNT,T_AFTER_DISCOUNT, T_TOTAL_VAT,T_VAT_TAX,T_PAMENT, T_DUE,T_SALE_TOTAL,T_SALE_DATE,T_SHOP_ID,T_PENDING_FLG,T_ENTRY_USER,T_ENTRY_DATE,T_SITE_CODE,T_OUTLET_CODE)VALUES('{max_40}','{t14040.T_MEMO_NO}', '{t14040.T_MEMO_SQ}',  '{custId}','{t14040.T_TYPE_CODE}', '{t14040.T_GRAND_TOTAL}', '{t14040.T_DISCOUNT}', '{t14040.T_AFTER_DISCOUNT}','{t14040.T_TOTAL_VAT}','{t14040.T_VAT_TAX}', '{t14040.T_PAMENT}','{t14040.T_BALANCE}','{t14040.T_SALE_TOTAL}', '{t14040.T_ENTRY_DATE}','{shopId}','1','{user}','{date}','{siteCode}','{outletCode}')";
                         command_2(save_40, objConn, objTrans);
 
 
